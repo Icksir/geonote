@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
+  runApp(MaterialApp(home: Home()));
+}
+
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       backgroundColor: Color(0xFFf8fdff),
       appBar: AppBar(
-        title: Text(
-          "Geo Note"
-        ),
+        title: Text("Geo Note"),
         centerTitle: true,
         backgroundColor: Color(0xff3f51b5),
         elevation: 0,
@@ -27,10 +35,8 @@ void main() {
                   children: <Widget>[
                     Text(
                       "Último Sismo",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                      ),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text("Hora: 23:33"),
                     Text("Lugar: Villa Alemana"),
@@ -48,16 +54,14 @@ void main() {
                 padding: const EdgeInsets.all(15.0),
                 child: Center(
                   child: Text(
-                      "Últimos Sismos",
-                    style: TextStyle(
-                      fontSize: 20
-                    ),
-
+                    "Últimos Sismos",
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ),
             ),
-          ),Expanded(
+          ),
+          Expanded(
             flex: 1,
             child: Card(
               color: Color(0xff757de8),
@@ -66,15 +70,13 @@ void main() {
                 child: Center(
                   child: Text(
                     "Procedimientos de seguridad y consejos",
-                    style: TextStyle(
-                        fontSize: 20
-                    ),
-
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ),
             ),
-          ),Expanded(
+          ),
+          Expanded(
             flex: 1,
             child: Card(
               color: Color(0xff757de8),
@@ -83,9 +85,7 @@ void main() {
                 child: Center(
                   child: Text(
                     "Configuraciones",
-                    style: TextStyle(
-                        fontSize: 20
-                    ),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ),
@@ -97,6 +97,6 @@ void main() {
           )
         ],
       ),
-    )
-  ));
+    );
+  }
 }
