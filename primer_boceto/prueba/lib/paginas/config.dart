@@ -8,6 +8,11 @@ class Config extends StatefulWidget {
 class _ConfigState extends State<Config> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+        title: Text('Configuración'),
+      ),
+    );
   }
 }
