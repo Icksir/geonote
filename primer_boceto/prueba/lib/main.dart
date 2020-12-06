@@ -8,7 +8,11 @@ import 'package:prueba/paginas/ultimos_sismos.dart';
 // Agregué las rutas que deberían haber
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/',
+    //La ruta principal debería ser '/' para que cargue todos los datos, pero
+    //creo que es mejor dejarla en home primero para ir testeando.
+
+    initialRoute: '/home',
+
     routes: {
       '/': (context) => Carga(),
       '/home': (context) => Home(),
