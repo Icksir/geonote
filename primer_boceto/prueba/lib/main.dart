@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color(0xFFf8fdff),
       appBar: AppBar(
-        title: Text("Geo Note"),
+        title: Text("GeoNote"),
         centerTitle: true,
         backgroundColor: Color(0xff3f51b5),
         elevation: 0,
