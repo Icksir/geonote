@@ -44,82 +44,41 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            FlatButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/ultSismos');
-              },
-              icon: Icon(
-                Icons.announcement_rounded,
-              ),
-              label: Text('Últimos Sismos'),
-            ),
-            /* Expanded(
-              flex: 1,
-              child: Card(
-                color: Color(0xff757de8),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Center(
-                    child: Text(
-                      "Últimos Sismos",
-                      style: TextStyle(fontSize: 20),
-                    ),
+
+            // ULTIMOS SISMOS
+            Column(
+              children: [
+                FlatButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/ultSismos');
+                  },
+                  icon: Icon(
+                    Icons.announcement_rounded,
                   ),
+                  label: Text('Últimos Sismos'),
                 ),
-              ),
-            ), */
-            FlatButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/consejos');
-              },
-              icon: Icon(
-                Icons.help,
-              ),
-              label: Text('Procedimientos de seguridad y consejos'),
-            ),
-            /* Expanded(
-              flex: 1,
-              child: Card(
-                color: Color(0xff757de8),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Center(
-                    child: Text(
-                      "Procedimientos de seguridad y consejos",
-                      style: TextStyle(fontSize: 20),
-                    ),
+                // CONSEJOS
+                FlatButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/consejos');
+                  },
+                  icon: Icon(
+                    Icons.help,
                   ),
+                  label: Text('Procedimientos de seguridad y consejos'),
                 ),
-              ),
-            ), */
-            FlatButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/config');
-              },
-              icon: Icon(
-                Icons.handyman_outlined,
-              ),
-              label: Text('Configuraciones'),
-            ),
-            /* Expanded(
-              flex: 1,
-              child: Card(
-                color: Color(0xff757de8),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Center(
-                    child: Text(
-                      "Configuraciones",
-                      style: TextStyle(fontSize: 20),
-                    ),
+                // CONFIGURACION
+                FlatButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/config');
+                  },
+                  icon: Icon(
+                    Icons.handyman_outlined,
                   ),
+                  label: Text('Configuraciones'),
                 ),
-              ),
-            ), */
-            Expanded(
-              flex: 1,
-              child: Container(),
-            )
+              ],
+            ),
           ],
         ),
       ),
