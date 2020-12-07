@@ -4,6 +4,9 @@ import 'package:prueba/paginas/pantalla_carga.dart';
 import 'package:prueba/paginas/config.dart';
 import 'package:prueba/paginas/consejos.dart';
 import 'package:prueba/paginas/ultimos_sismos.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 // Agregué las rutas que deberían haber
 void main() {
