@@ -94,8 +94,7 @@ class _HomeState extends State<Home> {
               children: [
                 FlatButton.icon(
                   onPressed: () {
-
-                    //Navigator.pushNamed(context, '/ultSismos');
+                    Navigator.pushNamed(context, '/ultSismos');
                   },
                   icon: Icon(
                     Icons.announcement_rounded,
