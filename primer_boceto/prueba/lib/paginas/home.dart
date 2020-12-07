@@ -4,8 +4,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
 
-
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -21,15 +19,10 @@ class _HomeState extends State<Home> {
   //FUNCION PARA CONECTAR CON API
   List data;
 
-
-
   Future<String> getData() async {
     http.Response response = await http.get(
         Uri.encodeFull("https://api.gael.cl/general/public/sismos"),
-        headers: {
-          "Accept": "application/json"
-        }
-    );
+        headers: {"Accept": "application/json"});
     this.setState(() {
       data = json.decode(response.body);
     });
@@ -37,7 +30,7 @@ class _HomeState extends State<Home> {
 
   String ultSismo() {
     getData();
-    if (data.length>0) {
+    if (data.length > 0) {
       setState(() {
         fecha = data[0]["Fecha"];
         lugar = data[0]["RefGeografica"];
@@ -82,7 +75,14 @@ class _HomeState extends State<Home> {
                       ),
                       Text(fecha),
                       Text(lugar),
-                      Text(magnitud)
+                      Text(magnitud),
+                      FlatButton.icon(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/mapa');
+                        },
+                        icon: Icon(Icons.map),
+                        label: Text('Mapa'),
+                      )
                     ],
                   ),
                 ),
