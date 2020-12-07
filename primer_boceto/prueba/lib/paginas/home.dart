@@ -12,13 +12,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //VARIABLES ULTIMO SISMO
 
-  String fecha = "";
-  String lugar = "";
-  String magnitud = "";
+  String fecha = "Cargando fecha...";
+  String lugar = "Cargando lugar...";
+  String magnitud = "Cargando magnitud...";
 
   //FUNCION PARA CONECTAR CON API
   List data;
 
+  // ignore: missing_return
   Future<String> getData() async {
     http.Response response = await http.get(
         Uri.encodeFull("https://api.gael.cl/general/public/sismos"),
@@ -30,19 +31,20 @@ class _HomeState extends State<Home> {
 
   String ultSismo() {
     getData();
-    if (data.length > 0) {
+    if (data != null) {
       setState(() {
         fecha = data[0]["Fecha"];
         lugar = data[0]["RefGeografica"];
         magnitud = data[0]["Magnitud"];
       });
     }
-    debugPrint("ULTSISMO");
+    debugPrint("**Datos de api recolectados**");
   }
 
   @override
   Widget build(BuildContext context) {
-    Timer.periodic(new Duration(seconds: 10), (timer) {
+    ultSismo();
+    Timer.periodic(new Duration(minutes: 3), (timer) {
       ultSismo();
     });
     return Scaffold(
