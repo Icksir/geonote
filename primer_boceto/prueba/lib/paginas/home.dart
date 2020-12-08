@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'dart:core';
 
 class Home extends StatefulWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   _HomeState createState() => _HomeState();
 }
@@ -54,7 +55,12 @@ class _HomeState extends State<Home> {
       // sin la appBar, y eso fuera para el resto de las páginas secundarias.
       // comenté las barras para convertirlas a botones
       //
-
+      key: widget._scaffoldKey,
+      drawer: new Drawer(
+        child: ListView(
+          children: <Widget>[Text("owo")],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -92,8 +98,19 @@ class _HomeState extends State<Home> {
             ),
 
             // ULTIMOS SISMOS
-            Column(
+            Row(
               children: [
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 10.0, 8.0),
+                  child: Expanded(
+                    flex: 1,
+                    child: FloatingActionButton(
+                        onPressed: () =>
+                            widget._scaffoldKey.currentState.openDrawer(),
+                        child: Icon(Icons.dehaze)),
+                  ),
+                ),
                 FlatButton.icon(
                   onPressed: () {
                     Navigator.pushNamed(context, '/ultSismos');
@@ -104,7 +121,7 @@ class _HomeState extends State<Home> {
                   label: Text('Últimos Sismos'),
                 ),
                 // CONSEJOS
-                FlatButton.icon(
+                /* FlatButton.icon(
                   onPressed: () {
                     Navigator.pushNamed(context, '/consejos');
                   },
@@ -112,9 +129,9 @@ class _HomeState extends State<Home> {
                     Icons.help,
                   ),
                   label: Text('Procedimientos de seguridad y consejos'),
-                ),
+                ), */
                 // CONFIGURACION
-                FlatButton.icon(
+                /* FlatButton.icon(
                   onPressed: () {
                     Navigator.pushNamed(context, '/config');
                   },
@@ -122,7 +139,7 @@ class _HomeState extends State<Home> {
                     Icons.handyman_outlined,
                   ),
                   label: Text('Configuraciones'),
-                ),
+                ), */
               ],
             ),
           ],

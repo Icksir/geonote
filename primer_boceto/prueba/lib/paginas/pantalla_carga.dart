@@ -13,10 +13,9 @@ class Carga extends StatefulWidget {
 }
 
 class _CargaState extends State<Carga> {
-
   @override
   Widget build(BuildContext context) {
-    List datos;
+    /* List datos;
     Future<void> getDatos() async {
       http.Response response = await http.get(
           Uri.encodeFull("https://api.gael.cl/general/public/sismos"),
@@ -24,15 +23,15 @@ class _CargaState extends State<Carga> {
       setState(() {
         datos = json.decode(response.body);
       });
-    }
-    while (datos==null) {
+    } */
+    /* while (datos==null) {
       getDatos();
     }
     Navigator.of(context).push(MaterialPageRoute<Null>(
         builder: (BuildContext context){
-          return new Home(datos);
+          return new Home();
         }
-    ));
+    )); */
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
