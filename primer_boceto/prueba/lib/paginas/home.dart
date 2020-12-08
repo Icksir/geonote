@@ -100,7 +100,6 @@ class _HomeState extends State<Home> {
             // ULTIMOS SISMOS
             Row(
               children: [
-
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 8.0, 10.0, 8.0),
                   child: Expanded(

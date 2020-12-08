@@ -34,10 +34,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.7.4
+  flutter_launcher_icons: "^0.8.0"
 
 flutter_icons:
-  image_path: 'assets/images/logo_geonote.png'
+  image_path: "assets/images/logo_geonote.png"
   android: true
   ios: true
 
