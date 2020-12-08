@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
 import 'dart:core';
 
 class Home extends StatefulWidget {
@@ -11,17 +8,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  //VARIABLES ULTIMO SISMO
-
-  String fecha = "Cargando fecha...";
-  String lugar = "Cargando lugar...";
-  String magnitud = "Cargando magnitud...";
+  //FUNCION QUE INICIA EL DICCIONARIO QUE CONTIENE LOS DATOS DE LA API
+  Map data = {};
 
   //FUNCION PARA CONECTAR CON API
-  List data;
+/*   List data; */
 
   // ignore: missing_return
-  Future<String> getData() async {
+  /* Future<String> getData() async {
     http.Response response = await http.get(
         Uri.encodeFull("https://api.gael.cl/general/public/sismos"),
         headers: {"Accept": "application/json"});
@@ -41,13 +35,15 @@ class _HomeState extends State<Home> {
     }
     debugPrint("**Datos de api recolectados**");
   }
-
+ */
   @override
   Widget build(BuildContext context) {
-    ultSismo();
+    data = ModalRoute.of(context).settings.arguments;
+    print(data);
+/*     ultSismo();
     Timer.periodic(new Duration(minutes: 3), (timer) {
       ultSismo();
-    });
+    }); */
     return Scaffold(
       backgroundColor: Color(0xFFf8fdff),
 
@@ -81,9 +77,9 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text(fecha),
-                      Text(lugar),
-                      Text(magnitud),
+                      Text(data['hora']),
+                      Text(data['ubicacion']),
+                      Text(data['magnitud']),
                       FlatButton.icon(
                         onPressed: () {
                           Navigator.pushNamed(context, '/mapa');
