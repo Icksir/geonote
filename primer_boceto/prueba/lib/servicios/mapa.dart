@@ -68,7 +68,7 @@ class _MapaState extends State<Mapa> {
             GoogleMap(
               onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
-                zoom: 10,
+                zoom: 9,
                 target: LatLng(getLatitud(), getLongitud()),
               ),
               markers: _markers,
