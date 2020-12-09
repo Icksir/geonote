@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
       ultSismo();
     }); */
     return Scaffold(
-      backgroundColor: Color(0xFFf8fdff),
+      backgroundColor: Colors.purple,
 
       // Creo que para la parte principal quedaría más bonito
       // sin la appBar, y eso fuera para el resto de las páginas secundarias.
@@ -62,10 +62,22 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
+              flex: 1,
+              child: Image(
+                image: AssetImage('assets/images/titulo_home.png'),
+                width: 300,
+                height: 150,
+              ),
+            ),
+
+            Expanded(
               flex: 4,
               child: Container(
-                margin: EdgeInsets.all(20.0),
-                color: Color(0xff3f51b5),
+                margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.blueAccent,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 70.0, horizontal: 35.0),
@@ -75,18 +87,30 @@ class _HomeState extends State<Home> {
                       Text(
                         "Último Sismo",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                      Text(data['hora']),
-                      Text(data['ubicacion']),
-                      Text(data['magnitud']),
+                      Text(data['hora'],
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      Text(data['ubicacion'],
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      Text(data['magnitud'],
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
                       FlatButton.icon(
                         onPressed: () {
                           Navigator.pushNamed(context, '/mapa');
                         },
                         icon: Icon(Icons.map),
                         label: Text('Mapa'),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -95,25 +119,33 @@ class _HomeState extends State<Home> {
 
             // ULTIMOS SISMOS
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 10.0, 8.0),
-                  child: Expanded(
-                    flex: 1,
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 40.0, 15.0),
                     child: FloatingActionButton(
-                        onPressed: () =>
-                            widget._scaffoldKey.currentState.openDrawer(),
-                        child: Icon(Icons.dehaze)),
+                      onPressed: () =>
+                          widget._scaffoldKey.currentState.openDrawer(),
+                      child: Icon(Icons.dehaze),
+                      backgroundColor: Colors.blueAccent,
+                    ),
                   ),
                 ),
-                FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/ultSismos');
-                  },
-                  icon: Icon(
-                    Icons.announcement_rounded,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 30.0, 5.0),
+                  child: Card(
+                    child: FlatButton.icon(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/ultSismos');
+                      },
+                      icon: Icon(
+                        Icons.announcement_rounded,
+                      ),
+                      label: Text('Últimos Sismos'),
+                    ),
                   ),
-                  label: Text('Últimos Sismos'),
                 ),
                 // CONSEJOS
                 /* FlatButton.icon(

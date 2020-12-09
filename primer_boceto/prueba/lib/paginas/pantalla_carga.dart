@@ -48,8 +48,12 @@ class _CargaState extends State<Carga> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Text('cargando'),
-    ));
+      body: Center(
+        child: SpinKitFadingCircle(
+          color: Colors.white,
+        ),
+      ),
+      backgroundColor: Colors.blue[800],
+    );
   }
 }
