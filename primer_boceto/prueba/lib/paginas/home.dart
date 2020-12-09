@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
@@ -9,7 +8,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   Map data = {};
 /*   List data; */
 
@@ -77,8 +75,8 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(20.0),
                   color: Color.fromRGBO(083, 131, 178, 1),
                   border: Border.all(
-                      width: 3.0,
-                      color: Colors.white,
+                    width: 3.0,
+                    color: Colors.white,
                   ),
                 ),
                 child: Padding(
@@ -125,13 +123,12 @@ class _HomeState extends State<Home> {
                       ),
                       Expanded(
                         flex: 3,
-                        child: Container(
-                        ),
+                        child: Container(),
                       ),
                       Expanded(
                         flex: 2,
                         child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FlatButton.icon(
                               onPressed: () {},
@@ -142,28 +139,32 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               color: Color.fromRGBO(033, 069, 128, 0.8),
-                              icon: Icon(Icons.info_outline, color: Colors.white,),
+                              icon: Icon(
+                                Icons.info_outline,
+                                color: Colors.white,
+                              ),
                             ),
                             Container(),
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/mapa', arguments: {
-                                  'latitud': data['latitud'],
-                                  'longitud': data['longitud']
-                                });
+                                Navigator.pushNamed(context, '/mapa',
+                                    arguments: {
+                                      'latitud': data['latitud'],
+                                      'longitud': data['longitud']
+                                    });
                               },
                               color: Color.fromRGBO(033, 069, 128, 0.8),
                               icon: Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.white,
+                                Icons.location_on_outlined,
+                                color: Colors.white,
                               ),
                               label: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                    'Mapa',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
+                                  'Mapa',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
