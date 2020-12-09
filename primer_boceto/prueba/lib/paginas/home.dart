@@ -9,10 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  //FUNCION QUE INICIA EL DICCIONARIO QUE CONTIENE LOS DATOS DE LA API
-  Map data = {};
 
-  //FUNCION PARA CONECTAR CON API
+  Map data = {};
 /*   List data; */
 
   // ignore: missing_return

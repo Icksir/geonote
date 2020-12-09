@@ -51,6 +51,7 @@ class _CargaState extends State<Carga> {
       body: Center(
         child: SpinKitRipple(
           color: Colors.white,
+          size: 80,
         ),
       ),
       backgroundColor: Colors.blue[800],
