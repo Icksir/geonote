@@ -106,7 +106,10 @@ class _HomeState extends State<Home> {
                           )),
                       FlatButton.icon(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/mapa');
+                          Navigator.pushNamed(context, '/mapa', arguments: {
+                            'latitud': data['latitud'],
+                            'longitud': data['longitud']
+                          });
                         },
                         icon: Icon(Icons.map),
                         label: Text('Mapa'),

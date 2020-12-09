@@ -9,6 +9,8 @@ class Mapa extends StatefulWidget {
 class _MapaState extends State<Mapa> {
   @override
   Widget build(BuildContext context) {
+    final Map<String, Object> data = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Ubicación'),
@@ -16,7 +18,8 @@ class _MapaState extends State<Mapa> {
         body: GoogleMap(
           initialCameraPosition: CameraPosition(
             zoom: 10,
-            target: LatLng(-35.4264, -71.65542),
+            target: LatLng(
+                double.parse(data['latitud']), double.parse(data['longitud'])),
           ),
         ));
   }
