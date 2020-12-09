@@ -49,7 +49,7 @@ class _CargaState extends State<Carga> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SpinKitFadingCircle(
+        child: SpinKitRipple(
           color: Colors.white,
         ),
       ),

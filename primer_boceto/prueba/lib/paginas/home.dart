@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
@@ -45,7 +46,7 @@ class _HomeState extends State<Home> {
       ultSismo();
     }); */
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Color.fromRGBO(008, 024, 066, 1),
 
       // Creo que para la parte principal quedaría más bonito
       // sin la appBar, y eso fuera para el resto de las páginas secundarias.
@@ -73,46 +74,103 @@ class _HomeState extends State<Home> {
             Expanded(
               flex: 4,
               child: Container(
-                margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
+                margin: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 50.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Color.fromRGBO(083, 131, 178, 1),
+                  border: Border.all(
+                      width: 3.0,
+                      color: Colors.white,
+                  ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 70.0, horizontal: 35.0),
+                      vertical: 70.0, horizontal: 25.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        "Último Sismo",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      Expanded(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          "Último Sismo",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      Text(data['hora'],
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
-                      Text(data['ubicacion'],
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
-                      Text(data['magnitud'],
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
-                      FlatButton.icon(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/mapa', arguments: {
-                            'latitud': data['latitud'],
-                            'longitud': data['longitud']
-                          });
-                        },
-                        icon: Icon(Icons.map),
-                        label: Text('Mapa'),
+                      Expanded(
+                        flex: 1,
+                        child: Text(data['hora'],
+                            style: TextStyle(
+                              color: Colors.white,
+                            )),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Text(data['ubicacion'],
+                            style: TextStyle(
+                              color: Colors.white,
+                            )),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Text(data['magnitud'],
+                            style: TextStyle(
+                              color: Colors.white,
+                            )),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            FlatButton.icon(
+                              onPressed: () {},
+                              label: Text(
+                                'Detalles',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              color: Color.fromRGBO(033, 069, 128, 0.8),
+                              icon: Icon(Icons.info_outline, color: Colors.white,),
+                            ),
+                            Container(),
+                            FlatButton.icon(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/mapa', arguments: {
+                                  'latitud': data['latitud'],
+                                  'longitud': data['longitud']
+                                });
+                              },
+                              color: Color.fromRGBO(033, 069, 128, 0.8),
+                              icon: Icon(
+                                  Icons.location_on_outlined,
+                                  color: Colors.white,
+                              ),
+                              label: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                    'Mapa',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -127,18 +185,20 @@ class _HomeState extends State<Home> {
                 Expanded(
                   flex: 1,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 40.0, 15.0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 40.0, 50.0),
                     child: FloatingActionButton(
                       onPressed: () =>
                           widget._scaffoldKey.currentState.openDrawer(),
                       child: Icon(Icons.dehaze),
-                      backgroundColor: Colors.blueAccent,
+                      backgroundColor: Color.fromRGBO(083, 131, 178, 1),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 30.0, 5.0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 30.0, 15.0),
                   child: Card(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+                    color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton.icon(
                       onPressed: () {
                         Navigator.pushNamed(context, '/ultSismos');
@@ -146,7 +206,10 @@ class _HomeState extends State<Home> {
                       icon: Icon(
                         Icons.announcement_rounded,
                       ),
-                      label: Text('Últimos Sismos'),
+                      label: Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                        child: Text('Últimos Sismos'),
+                      ),
                     ),
                   ),
                 ),
