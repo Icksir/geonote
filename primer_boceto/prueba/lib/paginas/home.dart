@@ -8,39 +8,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Map data = {};
-/*   List data; */
+  List data = [];
 
-  // ignore: missing_return
-  /* Future<String> getData() async {
-    http.Response response = await http.get(
-        Uri.encodeFull("https://api.gael.cl/general/public/sismos"),
-        headers: {"Accept": "application/json"});
-    this.setState(() {
-      data = json.decode(response.body);
-    });
-  }
-
-  String ultSismo() {
-    getData();
-    if (data != null) {
-      setState(() {
-        fecha = data[0]["Fecha"];
-        lugar = data[0]["RefGeografica"];
-        magnitud = data[0]["Magnitud"];
-      });
-    }
-    debugPrint("**Datos de api recolectados**");
-  }
- */
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
-    print(data);
-/*     ultSismo();
-    Timer.periodic(new Duration(minutes: 3), (timer) {
-      ultSismo();
-    }); */
+
     return Scaffold(
       backgroundColor: Color.fromRGBO(008, 024, 066, 1),
 
@@ -102,21 +75,21 @@ class _HomeState extends State<Home> {
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data['hora'],
+                        child: Text('',
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data['ubicacion'],
+                        child: Text('',
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data['magnitud'],
+                        child: Text('',
                             style: TextStyle(
                               color: Colors.white,
                             )),
@@ -147,11 +120,14 @@ class _HomeState extends State<Home> {
                             Container(),
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/mapa',
-                                    arguments: {
-                                      'latitud': data['latitud'],
-                                      'longitud': data['longitud']
-                                    });
+                                Navigator.pushNamed(
+                                  context,
+                                  '/mapa',
+                                  arguments: {
+                                    'latitud': data[0]['Latitud'],
+                                    'longitud': data[0]['Longitud']
+                                  },
+                                );
                               },
                               color: Color.fromRGBO(033, 069, 128, 0.8),
                               icon: Icon(
@@ -200,7 +176,13 @@ class _HomeState extends State<Home> {
                     color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton.icon(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/ultSismos');
+                        Navigator.pushNamed(context, '/ultSismos', arguments: [
+                          data[1],
+                          data[2],
+                          data[3],
+                          data[4],
+                          data[5]
+                        ]);
                       },
                       icon: Icon(
                         Icons.announcement_rounded,

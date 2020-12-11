@@ -6,8 +6,12 @@ class Sismos extends StatefulWidget {
 }
 
 class _SismosState extends State<Sismos> {
+  List data = [];
+
   @override
   Widget build(BuildContext context) {
+    data = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -18,10 +22,14 @@ class _SismosState extends State<Sismos> {
           itemBuilder: (context, index) {
             return Padding(
               padding:
-              const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
+                  const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
               child: Card(
                 child: ListTile(
-                    title: Text("k1000o rico", style: TextStyle(fontSize: 17))),
+                  title: Text(
+                    "${data[index]['Magnitud']}",
+                    style: TextStyle(fontSize: 17),
+                  ),
+                ),
               ),
             );
           }),

@@ -3,11 +3,7 @@ import 'dart:convert';
 import 'dart:async';
 
 class GaelApi {
-  String magnitud;
-  String ubicacion;
-  String latitud;
-  String longitud;
-  String hora;
+  Map sismo1, sismo2, sismo3, sismo4, sismo5, sismo6;
 
   // Esto se supone q serán las entradas de la función, donde supongo que es
   // latitud y longitud para calcular cierta distancia a alguna comuna
@@ -29,26 +25,14 @@ class GaelApi {
       RefGeografica: 25 km al N de Huasco, FechaUpdate: 08/12/2020 17:40:00}, ...
       */
 
-      Map primerSismo = data[0];
-      // obtener las propiedades
-      magnitud = primerSismo['Magnitud'];
-      ubicacion = primerSismo['RefGeografica'];
-      latitud = primerSismo['Latitud'];
-      longitud = primerSismo['Longitud'];
-      hora = primerSismo['Fecha'];
+      sismo1 = data[0];
+      sismo2 = data[1];
+      sismo3 = data[2];
+      sismo4 = data[3];
+      sismo5 = data[4];
+      sismo6 = data[5];
     } catch (e) {
       print(e);
-      magnitud = 'No se pudo calcular la magnitud';
-      ubicacion = 'No se pudo calcular la ubicacion';
-      hora = 'No se pudo calcular la hora';
     }
-
-/*     http.Response response = await http.get(
-        Uri.encodeFull(),
-        headers: {"Accept": "application/json"});
-
-    setState(() {
-      datos = json.decode(response.body);
-    }); */
   }
 }
