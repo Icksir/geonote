@@ -29,7 +29,9 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: FlatButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/consejos');
+                  },
                   icon: Icon(Icons.lightbulb_outline),
                   label: Text(
                     "Procedimientos y \nRecomendaciones",
@@ -39,7 +41,9 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
               child: FlatButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/config");
+                  },
                   icon: Icon(Icons.settings_outlined),
                   label: Text(
                     "Configuraciones",
