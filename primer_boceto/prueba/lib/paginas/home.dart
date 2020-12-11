@@ -13,6 +13,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
+    print(data);
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(008, 024, 066, 1),
@@ -24,7 +25,28 @@ class _HomeState extends State<Home> {
       key: widget._scaffoldKey,
       drawer: new Drawer(
         child: ListView(
-          children: <Widget>[Text("owo")],
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              child: FlatButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.lightbulb_outline),
+                  label: Text(
+                    "Procedimientos y \nRecomendaciones",
+                    style: TextStyle(fontSize: 16),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+              child: FlatButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.settings_outlined),
+                  label: Text(
+                    "Configuraciones",
+                    style: TextStyle(fontSize: 16),
+                  )),
+            )
+          ],
         ),
       ),
       body: SafeArea(
@@ -75,21 +97,21 @@ class _HomeState extends State<Home> {
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text('',
+                        child: Text(data[0]['Fecha'],
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text('',
+                        child: Text(data[0]['RefGeografica'],
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text('',
+                        child: Text(data[0]['Magnitud'],
                             style: TextStyle(
                               color: Colors.white,
                             )),
@@ -120,14 +142,11 @@ class _HomeState extends State<Home> {
                             Container(),
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  '/mapa',
-                                  arguments: {
-                                    'latitud': data[0]['Latitud'],
-                                    'longitud': data[0]['Longitud']
-                                  },
-                                );
+                                Navigator.pushNamed(context, '/mapa',
+                                    arguments: {
+                                      'latitud': data[0]['latitud'],
+                                      'longitud': data[0]['longitud']
+                                    });
                               },
                               color: Color.fromRGBO(033, 069, 128, 0.8),
                               icon: Icon(
