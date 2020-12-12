@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,28 +11,6 @@ class _ConfigState extends State<Config> {
   String _menu = "Seleccione una opcion:";
   bool _checkBoxValue = false;
 
-  /*  Future<void> guardar_notificaciones(value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("notificacion", value); */
-  /* await prefs.setBool("Ciudad", value); 
-
-     final prefs = await SharedPreferences.getInstance();
-    data = prefs.getString('data') ?? '';
-    super.initState(); */
-
-/* 
-  Future<void> guardar_datos() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    _checkBoxValue = await prefs.getBool("notificacion");
-  }
-
-  @override
-  void initState() {
-    
-    super.initState();
-    guardar_datos();
-  }
- */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
