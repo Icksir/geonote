@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/servicios/api.dart';
 
 class Sismos extends StatefulWidget {
   @override
@@ -8,11 +7,6 @@ class Sismos extends StatefulWidget {
 
 class _SismosState extends State<Sismos> {
   List data = [];
-  /* Future <Map> recabarDatos(int index) async {
-    GaelApi instancia = GaelApi();
-    Map datos = await instancia.getDatos(index);
-    return datos
-  } */
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +18,6 @@ class _SismosState extends State<Sismos> {
         title: Text('Últimos Sismos'),
       ),
       body: ListView.builder(
-          /* children: const <Widget>[
-        Card(
-            child: ListTile(
-          title: Text("2do", style: TextStyle(fontSize: 12)),
-          subtitle: Text("",
-              style: TextStyle(fontSize: 12)),
-          isThreeLine: true,
-        ),)
-      ] */
-
           itemCount: 5,
           itemBuilder: (context, index) {
             return Padding(
@@ -91,20 +75,7 @@ class _SismosState extends State<Sismos> {
                             )
                           ],
                         ),
-
-                        /* FlatButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/mapa', arguments: {
-                              'latitud': data[index]['Latitud'],
-                              'longitud': data[index]['Longitud']
-                            });
-                          },
-                          child: Text(
-                            "Mapa",
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ) */
-                      )
+                      ),
                     ],
                   ),
                 ),

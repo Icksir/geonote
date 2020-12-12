@@ -13,15 +13,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
-    print(data);
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-
-      // Creo que para la parte principal quedaría más bonito
-      // sin la appBar, y eso fuera para el resto de las páginas secundarias.
-      // comenté las barras para convertirlas a botones
-      //
       key: widget._scaffoldKey,
       drawer: new Drawer(
         child: ListView(
@@ -146,11 +140,14 @@ class _HomeState extends State<Home> {
                             Container(),
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/mapa',
-                                    arguments: {
-                                      'latitud': data[0]['latitud'],
-                                      'longitud': data[0]['longitud']
-                                    });
+                                Navigator.pushNamed(
+                                  context,
+                                  '/mapa',
+                                  arguments: {
+                                    'latitud': data[0]['Latitud'],
+                                    'longitud': data[0]['Longitud']
+                                  },
+                                );
                               },
                               color: Color.fromRGBO(033, 069, 128, 0.8),
                               icon: Icon(
@@ -217,26 +214,6 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                // CONSEJOS
-                /* FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/consejos');
-                  },
-                  icon: Icon(
-                    Icons.help,
-                  ),
-                  label: Text('Procedimientos de seguridad y consejos'),
-                ), */
-                // CONFIGURACION
-                /* FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/config');
-                  },
-                  icon: Icon(
-                    Icons.handyman_outlined,
-                  ),
-                  label: Text('Configuraciones'),
-                ), */
               ],
             ),
           ],
