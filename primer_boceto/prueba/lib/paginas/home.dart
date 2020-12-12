@@ -9,11 +9,24 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List data = [];
+  String fecha = "No se pudo obtener la fecha";
+  String ref = "No se pudo obtener la ubicación";
+  String magnitud = "No se pudo obtener la magnitud";
+  String lat = "-35.4333";
+  String long = "-71.6667";
 
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
-
+    if (data != null) {
+      if (data[0] != null) {
+        fecha = data[0]["Fecha"];
+        ref = data[0]["RefGeografica"];
+        magnitud = data[0]["Magnitud"];
+        lat = data[0]["Latitud"];
+        long = data[0]["Longitud"];
+      }
+    }
     return Scaffold(
       backgroundColor: Color.fromRGBO(008, 024, 066, 1),
       key: widget._scaffoldKey,
@@ -95,21 +108,21 @@ class _HomeState extends State<Home> {
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data[0]['Fecha'],
+                        child: Text(fecha,
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data[0]['RefGeografica'],
+                        child: Text(ref,
                             style: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text(data[0]['Magnitud'],
+                        child: Text(magnitud,
                             style: TextStyle(
                               color: Colors.white,
                             )),
@@ -144,8 +157,8 @@ class _HomeState extends State<Home> {
                                   context,
                                   '/mapa',
                                   arguments: {
-                                    'latitud': data[0]['Latitud'],
-                                    'longitud': data[0]['Longitud']
+                                    'latitud': lat,
+                                    'longitud': long
                                   },
                                 );
                               },
@@ -191,11 +204,23 @@ class _HomeState extends State<Home> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 30.0, 15.0),
-                  child: Card(
+                  child: Card( shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      topLeft: Radius.circular(10),
+                    ),
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 2.0,
+                    ),
+                  ),
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
                     color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton.icon(
                       onPressed: () {
+                        if (data != null){
                         Navigator.pushNamed(context, '/ultSismos', arguments: [
                           data[1],
                           data[2],
@@ -203,6 +228,10 @@ class _HomeState extends State<Home> {
                           data[4],
                           data[5]
                         ]);
+                        } else {
+                          Navigator.pushNamed(context, '/ultSismos');
+                        }
+
                       },
                       icon: Icon(
                         Icons.announcement_rounded,

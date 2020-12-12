@@ -16,7 +16,7 @@ void main() {
     //La ruta principal debería ser '/' para que cargue todos los datos, pero
     //creo que es mejor dejarla en home primero para ir testeando.
 
-    initialRoute: '/',
+    initialRoute: '/home',
 
     routes: {
       '/': (context) => Carga(),

@@ -11,30 +11,49 @@ class _SismosState extends State<Sismos> {
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         title: Text('Últimos Sismos'),
       ),
+      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
       body: ListView.builder(
           itemCount: 5,
           itemBuilder: (context, index) {
+            String texto = "No se han podido obtener los datos";
+            if (data != null) {
+              if (data[0] != null) {
+                texto = "${data[index]['Fecha']}\n${data[index]['RefGeografica']}\n${data[index]['Magnitud']}";
+              }
+            }
             return Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
               child: SizedBox(
                 height: 80,
                 child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      topLeft: Radius.circular(10),
+                    ),
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 2.0,
+                    ),
+                  ),
+                  color: Color.fromRGBO(083, 131, 178, 1),
                   child: Row(
                     children: <Widget>[
                       Expanded(
                         child: Padding(
                           child: Text(
-                              "${data[index]['Fecha']}\n${data[index]['RefGeografica']}\n${data[index]['Magnitud']}",
+                              "$texto",
                               style: TextStyle(fontSize: 15)),
                           padding:
-                              const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
+                              const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
                         ),
                       ),
                       Expanded(
