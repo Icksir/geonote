@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferencias {
@@ -10,7 +9,7 @@ class Preferencias {
   SharedPreferences _sharedPreferences;
   bool automatico = false;
 
-  Preferencias._internal() {}
+  Preferencias._internal();
 
   factory Preferencias() => instance;
 
@@ -19,7 +18,7 @@ class Preferencias {
       return _sharedPreferences;
     } else {
       _sharedPreferences = await SharedPreferences.getInstance();
-      automatico = _sharedPreferences.getBool("AUTOMATICO");
+      automatico = _sharedPreferences.getBool(AUTOMATICO);
       if (automatico == null) {
         automatico = false;
       }
@@ -29,7 +28,7 @@ class Preferencias {
 
 //guardar
   Future<bool> commit() async {
-    _sharedPreferences.setBool("AUTOMATICO", automatico);
+    _sharedPreferences.setBool(AUTOMATICO, automatico);
   }
 
 //leer

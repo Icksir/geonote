@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prueba/paginas/preferencias.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Config extends StatefulWidget {
   @override
@@ -8,8 +7,8 @@ class Config extends StatefulWidget {
 }
 
 class _ConfigState extends State<Config> {
-  var _lista = ["Santiago", "Valparaiso", "Vina del Mar", "Talca"];
-  String _menu = "Seleccione una opcion:";
+  /* var _lista = ["Santiago", "Valparaiso", "Vina del Mar", "Talca"];
+  String _menu = "Seleccione una opcion:"; */
   Preferencias _preferencias = Preferencias();
   /* bool _checkBoxValue = false; */
 
