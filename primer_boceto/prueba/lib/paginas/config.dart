@@ -11,11 +11,6 @@ class _ConfigState extends State<Config> {
   String _menu = "Seleccione una opcion:";
   bool _checkBoxValue = false;
 
-  Future<Null> saveOption(bool isSelected) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('option', isSelected);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

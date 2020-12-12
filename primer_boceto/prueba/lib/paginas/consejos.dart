@@ -6,42 +6,107 @@ class Consejos extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text('Consejos'),
+        title: Text('Procedimiento y recomendaciones'),
       ),
       body: ListView(
         children: <Widget>[
           SizedBox(
             height: 80,
-            child: Card(
-                child: ListTile(
-              title: Text("Consejo 1"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+              child: Card(
+                  child: FlatButton(
+                onPressed: () {
+                  print("si");
+                  Navigator.pushNamed(context, '/procedimiento_previo');
+                },
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.lightbulb_outline),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 10),
+                      child: Text("Antes del sismo",
+                          style: TextStyle(fontSize: 15)),
+                    )
+                  ],
+                ),
+              )),
+            ),
           ),
           SizedBox(
-            height: 80,
-            child: Card(
-                child: ListTile(
-              title: Text("Consejo 2"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
-          ),
+              height: 80,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+                child: Card(
+                    child: FlatButton(
+                  onPressed: () {
+                    print("si");
+                    Navigator.pushNamed(context, '/procedimiento_durante');
+                  },
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.lightbulb_outline),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 10),
+                        child: Text("Durante el sismo",
+                            style: TextStyle(fontSize: 15)),
+                      )
+                    ],
+                  ),
+                )),
+              )),
           SizedBox(
-            height: 80,
-            child: Card(
-                child: ListTile(
-              title: Text("Consejo 3"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
-          ),
+              height: 80,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+                child: Card(
+                    child: FlatButton(
+                  onPressed: () {
+                    print("si");
+                    Navigator.pushNamed(context, '/procedimiento_post');
+                  },
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.lightbulb_outline),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 10),
+                        child: Text("Despues el sismo",
+                            style: TextStyle(fontSize: 15)),
+                      )
+                    ],
+                  ),
+                )),
+              )),
           SizedBox(
-            height: 80,
-            child: Card(
-                child: ListTile(
-              title: Text("Consejo 4"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
-          )
+              height: 80,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+                child: Card(
+                    child: FlatButton(
+                  onPressed: () {
+                    print("si");
+                    Navigator.pushNamed(context, '/recomendaciones');
+                  },
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.lightbulb_outline),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 10),
+                        child: Text("Recomendaciones",
+                            style: TextStyle(fontSize: 15)),
+                      )
+                    ],
+                  ),
+                )),
+              ))
         ],
         /* children: const <Widget>[
         Card(
