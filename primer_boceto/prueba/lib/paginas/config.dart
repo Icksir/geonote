@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/paginas/preferencias.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Config extends StatefulWidget {
@@ -9,7 +10,8 @@ class Config extends StatefulWidget {
 class _ConfigState extends State<Config> {
   var _lista = ["Santiago", "Valparaiso", "Vina del Mar", "Talca"];
   String _menu = "Seleccione una opcion:";
-  bool _checkBoxValue = false;
+  Preferencias _preferencias = Preferencias();
+  /* bool _checkBoxValue = false; */
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +23,18 @@ class _ConfigState extends State<Config> {
         body: ListView(
           children: <Widget>[
             SwitchListTile(
+                value: _preferencias.automatico,
                 title: Text("¿Quieres recibir notificaciones de los sismos?",
                     style: TextStyle(fontSize: 17)),
                 secondary: Icon(Icons.notification_important_outlined),
                 controlAffinity: ListTileControlAffinity.platform,
-                value: _checkBoxValue,
-                onChanged: (bool value) {
+                /* value: /* _checkBoxValue ,*/ */
+                onChanged: (value) {
                   setState(() {
-                    _checkBoxValue = value;
+                    _preferencias.automatico = value;
+                    _preferencias.commit();
                   });
-                }),
+                }) /* ,
             DropdownButton(
                 items: _lista.map((String bbb) {
                   return DropdownMenuItem(value: bbb, child: Text(bbb));
@@ -40,7 +44,7 @@ class _ConfigState extends State<Config> {
                         _menu = _value;
                       })
                     },
-                hint: Text(_menu))
+                hint: Text(_menu)) */
           ],
         )
         /*Container(
@@ -66,5 +70,15 @@ class _ConfigState extends State<Config> {
           ],
         )) )*/
         );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _preferencias.init().then((value) {
+      setState(() {
+        _preferencias = value;
+      });
+    });
   }
 }
