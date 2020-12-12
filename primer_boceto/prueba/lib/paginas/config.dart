@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/paginas/preferencias.dart';
+import 'package:prueba/servicios/preferencias.dart';
 
 class Config extends StatefulWidget {
   @override
@@ -15,25 +15,25 @@ class _ConfigState extends State<Config> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blueAccent,
-          title: Text('Configuración'),
-        ),
-        body: ListView(
-          children: <Widget>[
-            SwitchListTile(
-                value: _preferencias.automatico,
-                title: Text("¿Quieres recibir notificaciones de los sismos?",
-                    style: TextStyle(fontSize: 17)),
-                secondary: Icon(Icons.notification_important_outlined),
-                controlAffinity: ListTileControlAffinity.platform,
-                /* value: /* _checkBoxValue ,*/ */
-                onChanged: (value) {
-                  setState(() {
-                    _preferencias.automatico = value;
-                    _preferencias.commit();
-                  });
-                }) /* ,
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+        title: Text('Configuración'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          SwitchListTile(
+              value: _preferencias.automatico,
+              title: Text("¿Quieres recibir notificaciones de los sismos?",
+                  style: TextStyle(fontSize: 17)),
+              secondary: Icon(Icons.notification_important_outlined),
+              controlAffinity: ListTileControlAffinity.platform,
+              /* value: /* _checkBoxValue ,*/ */
+              onChanged: (value) {
+                setState(() {
+                  _preferencias.automatico = value;
+                  _preferencias.commit();
+                });
+              }), /* ,
             DropdownButton(
                 items: _lista.map((String bbb) {
                   return DropdownMenuItem(value: bbb, child: Text(bbb));
@@ -44,9 +44,9 @@ class _ConfigState extends State<Config> {
                       })
                     },
                 hint: Text(_menu)) */
-          ],
-        )
-        /*Container(
+        ],
+      ),
+      /*Container(
             child: Column(
           children: <Widget>[
             Row(
@@ -68,7 +68,7 @@ class _ConfigState extends State<Config> {
             )
           ],
         )) )*/
-        );
+    );
   }
 
   @override
