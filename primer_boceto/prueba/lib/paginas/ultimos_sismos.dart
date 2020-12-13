@@ -28,7 +28,7 @@ class _SismosState extends State<Sismos> {
             }
             return Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
+              const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
               child: SizedBox(
                 height: 80,
                 child: Card(
@@ -53,7 +53,7 @@ class _SismosState extends State<Sismos> {
                               "$texto",
                               style: TextStyle(fontSize: 15)),
                           padding:
-                              const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                          const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
                         ),
                       ),
                       Expanded(
@@ -62,7 +62,7 @@ class _SismosState extends State<Sismos> {
                           children: <Widget>[
                             Padding(
                               padding:
-                                  const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
+                              const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
                               child: SizedBox(
                                 height: 30,
                                 child: FlatButton.icon(

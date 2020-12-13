@@ -221,13 +221,13 @@ class _HomeState extends State<Home> {
                     child: FlatButton.icon(
                       onPressed: () {
                         if (data != null){
-                        Navigator.pushNamed(context, '/ultSismos', arguments: [
-                          data[1],
-                          data[2],
-                          data[3],
-                          data[4],
-                          data[5]
-                        ]);
+                          Navigator.pushNamed(context, '/ultSismos', arguments: [
+                            data[1],
+                            data[2],
+                            data[3],
+                            data[4],
+                            data[5]
+                          ]);
                         } else {
                           Navigator.pushNamed(context, '/ultSismos');
                         }
