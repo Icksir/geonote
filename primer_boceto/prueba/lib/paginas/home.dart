@@ -48,15 +48,29 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
               child: FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/config");
-                  },
-                  icon: Icon(Icons.settings_outlined),
-                  label: Text(
-                    "Configuraciones",
-                    style: TextStyle(fontSize: 16),
-                  )),
-            )
+                onPressed: () {
+                  Navigator.pushNamed(context, "/config");
+                },
+                icon: Icon(Icons.settings_outlined),
+                label: Text(
+                  "Configuraciones",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+              child: FlatButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/zonas_seguras");
+                },
+                icon: Icon(Icons.do_disturb_on_outlined),
+                label: Text(
+                  "Zonas de Inundación",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -156,10 +170,7 @@ class _HomeState extends State<Home> {
                                 Navigator.pushNamed(
                                   context,
                                   '/mapa',
-                                  arguments: {
-                                    'latitud': lat,
-                                    'longitud': long
-                                  },
+                                  arguments: {'latitud': lat, 'longitud': long},
                                 );
                               },
                               color: Color.fromRGBO(033, 069, 128, 0.8),
@@ -204,34 +215,35 @@ class _HomeState extends State<Home> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 30.0, 15.0),
-                  child: Card( shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        topLeft: Radius.circular(10),
+                      ),
+                      side: BorderSide(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
                     ),
-                    side: BorderSide(
-                      color: Colors.white,
-                      width: 2.0,
-                    ),
-                  ),
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
                     color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton.icon(
                       onPressed: () {
-                        if (data != null){
-                          Navigator.pushNamed(context, '/ultSismos', arguments: [
-                            data[1],
-                            data[2],
-                            data[3],
-                            data[4],
-                            data[5]
-                          ]);
+                        if (data != null) {
+                          Navigator.pushNamed(context, '/ultSismos',
+                              arguments: [
+                                data[1],
+                                data[2],
+                                data[3],
+                                data[4],
+                                data[5]
+                              ]);
                         } else {
                           Navigator.pushNamed(context, '/ultSismos');
                         }
-
                       },
                       icon: Icon(
                         Icons.announcement_rounded,

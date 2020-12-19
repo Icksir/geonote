@@ -9,6 +9,7 @@ import 'package:prueba/paginas/procedimiento_previo.dart';
 import 'package:prueba/paginas/procedimiento_durante.dart';
 import 'package:prueba/paginas/procedimiento_post.dart';
 import 'package:prueba/paginas/recomendaciones.dart';
+import 'package:prueba/paginas/zonas_seguras.dart';
 
 // Agregué las rutas que deberían haber
 void main() {
@@ -29,6 +30,7 @@ void main() {
       '/procedimiento_durante': (context) => ProcedimientoDurante(),
       '/procedimiento_post': (context) => ProcedimientoPost(),
       '/recomendaciones': (context) => Recomendaciones(),
+      '/zonas_seguras': (context) => ZonasSeguras(),
     },
   ));
 }
