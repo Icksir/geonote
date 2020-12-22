@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -43,7 +46,7 @@ class _HomeState extends State<Home> {
     var iOSDetails = new IOSNotificationDetails();
     var generalNotificationDetails =
     new NotificationDetails(android: androidDetails, iOS: iOSDetails);
-    if (true) {
+    if (_preferencias.automatico) {
       await fltrNotification.show(
           0, titulo, cuerpo, generalNotificationDetails);
     }
@@ -68,6 +71,34 @@ class _HomeState extends State<Home> {
         long = data[0]["Longitud"];
       }
     }
+
+    String encontrarSismosConf() {
+      for (int i = 0; i<data.length; i++) {
+        List valpo = [-33.05 , -71.6167];
+        List vina = [-33 , -71.5167];
+        List talca = [-35.4333 , -71.6667];
+        List stgo = [-33.4372 , -70.6506];
+        List mina = [-20.98138913351316, -68.63792448764886];
+        //if(sqrt((data[i]["Latitud"]-1))){
+        // }
+        Float latS = data[i]["Latitud"];
+        Float longS= data[i]["Longitud"];
+        Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Mina Collahuasi":mina};
+        for (int j = 0; j < _preferencias.ciudades.length ; j++) {
+          var latitud = lugares[_preferencias.ciudades[j]][0];
+          var longitud = lugares[_preferencias.ciudades[j]][1];
+          var dist = sqrt((latitud-latS)*(latitud-latS)-(longitud-longS)*(longitud-longS));
+          if ( 1.5 >= dist ) {
+            _showNotification("Aviso de Sismo", data[i]["Fecha"]);
+            return "s";
+          }
+
+        }
+      }
+    }
+
+
+
     return Scaffold(
       backgroundColor: Color.fromRGBO(008, 024, 066, 1),
       key: widget._scaffoldKey,
@@ -224,11 +255,10 @@ class _HomeState extends State<Home> {
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                _showNotification("Advertencia de sismo",
-                                    _preferencias.ciudades.toString());
+                                encontrarSismosConf();
                               },
                               label: Text(
-                                'Prueba',
+                                'Notificación',
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
