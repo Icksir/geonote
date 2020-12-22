@@ -18,7 +18,7 @@ class Preferencias {
   //
   SharedPreferences _sharedPreferences;
   //campos
-  List ciudades = [];
+  List<String> ciudades = [];
 
   bool automatico = false;
 /*   bool santiago = false;
