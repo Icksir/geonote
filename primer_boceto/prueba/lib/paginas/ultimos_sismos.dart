@@ -27,80 +27,87 @@ class _SismosState extends State<Sismos> {
                   "${data[index]['Fecha']}\n${data[index]['RefGeografica']}\n${data[index]['Magnitud']}";
             }
           }
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
-            child: SizedBox(
-              height: 80,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                    topLeft: Radius.circular(10),
-                  ),
-                  side: BorderSide(
-                    color: Colors.white,
-                    width: 2.0,
-                  ),
-                ),
-                color: Color.fromRGBO(083, 131, 178, 1),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 3,
-                      child: Padding(
-                        child: Text("$texto",
-                            style:
-                                TextStyle(fontSize: 15, color: Colors.white)),
-                        padding:
-                            const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                      ),
+          return Container(
+            height: 100,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
+              child: SizedBox(
+                height: 80,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      topLeft: Radius.circular(10),
                     ),
-                    Expanded(
-                      flex: 2,
-                      child: Column(
-                        children: <Widget>[
-                          Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
-                            child: SizedBox(
-                              height: 30,
-                              child: FlatButton.icon(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/mapa',
-                                      arguments: {
-                                        'latitud': data[index]['Latitud'],
-                                        'longitud': data[index]['Longitud']
-                                      });
-                                },
-                                icon: Icon(Icons.location_on_outlined,
-                                    color: Colors.white),
-                                label: Text(
-                                  "Mapa",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 2.0,
+                    ),
+                  ),
+                  color: Color.fromRGBO(083, 131, 178, 1),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 4,
+                        child: Padding(
+                          child: Text(
+                            "$texto",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          ),
+                          padding:
+                              const EdgeInsets.fromLTRB(15.0, 10.0, 12.0, 10.0),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
+                              child: SizedBox(
+                                height: 30,
+                                child: FlatButton.icon(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/mapa',
+                                        arguments: {
+                                          'latitud': data[index]['Latitud'],
+                                          'longitud': data[index]['Longitud']
+                                        });
+                                  },
+                                  icon: Icon(Icons.location_on_outlined,
+                                      color: Colors.white),
+                                  label: Text(
+                                    "Mapa",
+                                    style: TextStyle(
+                                        fontSize: 14, color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                            child: FlatButton.icon(
-                              onPressed: () {},
-                              icon:
-                                  Icon(Icons.info_outline, color: Colors.white),
-                              label: Text(
-                                "Detalles",
-                                style: TextStyle(
-                                    fontSize: 15, color: Colors.white),
+                            SizedBox(
+                              height: 30,
+                              child: FlatButton.icon(
+                                onPressed: () {},
+                                icon: Icon(Icons.info_outline,
+                                    color: Colors.white),
+                                label: Text(
+                                  "Detalles",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.white),
+                                ),
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
