@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
         onSelectNotification: notificationSelected);
   }
 
-  Future _showNotification() async {
+  Future _showNotification(String titulo, String cuerpo) async {
     var androidDetails = new AndroidNotificationDetails(
         "Channel ID", "Camilo", "Descrpición",
         importance: Importance.max);
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
     var generalNotificationDetails =
         new NotificationDetails(android: androidDetails, iOS: iOSDetails);
     await fltrNotification.show(
-        0, "olapeo", "cata", generalNotificationDetails);
+        0, titulo, cuerpo, generalNotificationDetails);
   }
 
   List data = [];
@@ -209,10 +209,10 @@ class _HomeState extends State<Home> {
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                _showNotification();
+                                _showNotification("Advertencia de sismo","Ha ocurrido un sismo de magnitud M en C");
                               },
                               label: Text(
-                                'Detalles',
+                                'Prueba',
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
