@@ -79,10 +79,9 @@ class _HomeState extends State<Home> {
         List talca = [-35.4333 , -71.6667];
         List stgo = [-33.4372 , -70.6506];
         List mina = [-20.98138913351316, -68.63792448764886];
-        //if(sqrt((data[i]["Latitud"]-1))){
-        // }
-        Float latS = data[i]["Latitud"];
-        Float longS= data[i]["Longitud"];
+
+        Double latS = double.parse(data[i]["Latitud"]) as Double;
+        Double longS= double.parse(data[i]["Longitud"]) as Double;
         Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Mina Collahuasi":mina};
         for (int j = 0; j < _preferencias.ciudades.length ; j++) {
           var latitud = lugares[_preferencias.ciudades[j]][0];
