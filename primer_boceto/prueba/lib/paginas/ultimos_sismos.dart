@@ -20,7 +20,7 @@ class _SismosState extends State<Sismos> {
       body: ListView.builder(
         itemCount: 5,
         itemBuilder: (context, index) {
-          String texto = "No se han podido obtener los datos";
+          String texto = "No se ha podido obtener los datos";
           if (data != null) {
             if (data[0] != null) {
               texto =

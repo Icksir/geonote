@@ -5,7 +5,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class Home extends StatefulWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -22,11 +21,11 @@ class _HomeState extends State<Home> {
     fltrNotification.initialize(initializationSettings, onSelectNotification: notificationSelected);
   }
 
-  Future _showNotification() async {
+  Future _showNotification(String titulo, String cuerpo) async {
     var androidDetails = new AndroidNotificationDetails("Channel ID", "Camilo", "Descrpición", importance: Importance.max);
     var iOSDetails = new IOSNotificationDetails();
     var generalNotificationDetails = new NotificationDetails(android: androidDetails, iOS: iOSDetails);
-    await fltrNotification.show(0, "olapeo", "cata", generalNotificationDetails);
+    await fltrNotification.show(0, titulo, cuerpo, generalNotificationDetails);
   }
 
   List data = [];
@@ -172,9 +171,9 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FlatButton.icon(
-                              onPressed: () {_showNotification();},
+                              onPressed: () {_showNotification("Advertencia de sismo","Ocurrió un sismo de magnitud M en C");},
                               label: Text(
-                                'Detalles',
+                                'Prueba',
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
