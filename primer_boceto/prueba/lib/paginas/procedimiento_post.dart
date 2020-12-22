@@ -19,6 +19,7 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -34,12 +35,13 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 child: ListTile(
                   title: Text(
                       "Reúne a tu equipo de trabajo y permanezcan en un lugar seguro"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -55,12 +57,13 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 child: ListTile(
                   title: Text(
                       "Verifica posibles daños a tus compañeros y al edificio en que trabajas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -76,12 +79,13 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 child: ListTile(
                   title: Text(
                       "Coloca en el suelo los artefactos peligrosos para evitar que se caigan con posibles réplicas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -96,12 +100,13 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 ),
                 child: ListTile(
                   title: Text("Enciende una radio para estar informado"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -116,7 +121,7 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 ),
                 child: ListTile(
                   title: Text("No desesperes si no puedes realizar llamadas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
         ],

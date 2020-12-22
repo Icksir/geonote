@@ -19,6 +19,7 @@ class _Recomendaciones extends State<Recomendaciones> {
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -32,13 +33,14 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 1"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  title: Text("Consejo 1", style: TextStyle()),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -52,13 +54,14 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 2"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  title: Text("Consejo 2", style: TextStyle()),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -72,13 +75,14 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 3"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  title: Text("Consejo 3", style: TextStyle()),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -92,8 +96,8 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 4"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  title: Text("Consejo 4", style: TextStyle()),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           )
         ],

@@ -48,6 +48,7 @@ class _SismosState extends State<Sismos> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
+                      flex: 2,
                       child: Padding(
                         child: Text("$texto",
                             style:
@@ -73,7 +74,8 @@ class _SismosState extends State<Sismos> {
                                         'longitud': data[index]['Longitud']
                                       });
                                 },
-                                icon: Icon(Icons.map, color: Colors.white),
+                                icon: Icon(Icons.location_on_outlined,
+                                    color: Colors.white),
                                 label: Text(
                                   "Mapa",
                                   style: TextStyle(

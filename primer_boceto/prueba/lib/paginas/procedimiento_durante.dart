@@ -19,6 +19,7 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -34,12 +35,13 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 child: ListTile(
                   title: Text(
                       "Mantén la calma y preocúpate especialmente de personas mayores o enfermas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -55,12 +57,13 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 child: ListTile(
                   title: Text(
                       "Sitúate en un lugar alejado de muebles altos y pesados"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -76,12 +79,13 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 child: ListTile(
                   title: Text(
                       "En lo posible, no escapes al exterior ya que podrían caer tejas, postes y otros"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -97,12 +101,13 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 child: ListTile(
                   title: Text(
                       "Usa sólo las escaleras para evacuar el edificio, nunca los ascensores"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -117,7 +122,7 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 ),
                 child: ListTile(
                   title: Text("En lo posible, no conduzcas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
                 )),
           )
         ],

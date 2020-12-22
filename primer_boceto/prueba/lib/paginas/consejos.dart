@@ -17,6 +17,7 @@ class Consejos extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
               child: Card(
+                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(10),
@@ -29,20 +30,19 @@ class Consejos extends StatelessWidget {
                     width: 2.0,
                   ),
                 ),
-                color: Color.fromRGBO(083, 131, 178, 1),
                 child: FlatButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/procedimiento_previo');
                   },
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.lightbulb_outline, color: Colors.white),
+                      Icon(Icons.lightbulb_outline, color: Colors.black),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 0.0, horizontal: 10),
                         child: Text(
                           "Antes del sismo",
-                          style: TextStyle(fontSize: 15, color: Colors.white),
+                          style: TextStyle(fontSize: 15),
                         ),
                       ),
                     ],
@@ -69,7 +69,7 @@ class Consejos extends StatelessWidget {
                     width: 2.0,
                   ),
                 ),
-                color: Color.fromRGBO(083, 131, 178, 1),
+                color: Colors.white,
                 child: FlatButton(
                   onPressed: () {
                     print("si");
@@ -77,13 +77,13 @@ class Consejos extends StatelessWidget {
                   },
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.lightbulb_outline, color: Colors.white),
+                      Icon(Icons.lightbulb_outline, color: Colors.black),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 0.0, horizontal: 10),
                         child: Text(
                           "Durante el sismo",
-                          style: TextStyle(fontSize: 15, color: Colors.white),
+                          style: TextStyle(fontSize: 15),
                         ),
                       )
                     ],
@@ -110,7 +110,7 @@ class Consejos extends StatelessWidget {
                         width: 2.0,
                       ),
                     ),
-                    color: Color.fromRGBO(083, 131, 178, 1),
+                    color: Colors.white,
                     child: FlatButton(
                       onPressed: () {
                         print("si");
@@ -118,14 +118,13 @@ class Consejos extends StatelessWidget {
                       },
                       child: Row(
                         children: <Widget>[
-                          Icon(Icons.lightbulb_outline, color: Colors.white),
+                          Icon(Icons.lightbulb_outline, color: Colors.black),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 0.0, horizontal: 10),
                             child: Text(
                               "Despues el sismo",
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                              style: TextStyle(fontSize: 15),
                             ),
                           )
                         ],
@@ -150,7 +149,7 @@ class Consejos extends StatelessWidget {
                         width: 2.0,
                       ),
                     ),
-                    color: Color.fromRGBO(083, 131, 178, 1),
+                    color: Colors.white,
                     child: FlatButton(
                       onPressed: () {
                         print("si");
@@ -158,17 +157,13 @@ class Consejos extends StatelessWidget {
                       },
                       child: Row(
                         children: <Widget>[
-                          Icon(
-                            Icons.lightbulb_outline,
-                            color: Colors.white,
-                          ),
+                          Icon(Icons.lightbulb_outline, color: Colors.black),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 0.0, horizontal: 10),
                             child: Text(
                               "Recomendaciones",
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                              style: TextStyle(fontSize: 15),
                             ),
                           )
                         ],

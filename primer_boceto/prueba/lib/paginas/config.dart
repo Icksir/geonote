@@ -18,7 +18,7 @@ class _ConfigState extends State<Config> {
     S2Choice<String>(value: "1", title: 'Santiago'),
     S2Choice<String>(value: "2", title: 'Viña del mar'),
     S2Choice<String>(value: "3", title: 'Valparaíso'),
-    S2Choice<String>(value: "4", title: 'Talca (aunque no exista)'),
+    S2Choice<String>(value: "4", title: 'Talca'),
   ];
 
   @override
@@ -28,22 +28,25 @@ class _ConfigState extends State<Config> {
         backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         title: Text('Configuración'),
       ),
-      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
+      backgroundColor: Color.fromRGBO(083, 131, 178, 1),
       body: ListView(
         children: <Widget>[
-          SwitchListTile(
-              value: _preferencias.automatico,
-              title: Text("¿Quieres recibir notificaciones de los sismos?",
-                  style: TextStyle(fontSize: 17)),
-              secondary: Icon(Icons.notification_important_outlined),
-              controlAffinity: ListTileControlAffinity.platform,
-              /* value: /* _checkBoxValue ,*/ */
-              onChanged: (value) {
-                setState(() {
-                  _preferencias.automatico = value;
-                  _preferencias.commit();
-                });
-              }),
+          Container(
+            color: Colors.white,
+            child: SwitchListTile(
+                value: _preferencias.automatico,
+                title: Text("¿Quieres recibir notificaciones de los sismos?",
+                    style: TextStyle(fontSize: 17)),
+                secondary: Icon(Icons.notification_important_outlined),
+                controlAffinity: ListTileControlAffinity.platform,
+                /* value: /* _checkBoxValue ,*/ */
+                onChanged: (value) {
+                  setState(() {
+                    _preferencias.automatico = value;
+                    _preferencias.commit();
+                  });
+                }),
+          ),
           SmartSelect<String>.multiple(
               title: 'Ciudades de preferencia',
               value: _preferencias.ciudades,
