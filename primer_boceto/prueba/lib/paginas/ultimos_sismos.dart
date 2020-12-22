@@ -48,7 +48,7 @@ class _SismosState extends State<Sismos> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      flex: 2,
+                      flex: 3,
                       child: Padding(
                         child: Text("$texto",
                             style:
@@ -58,7 +58,7 @@ class _SismosState extends State<Sismos> {
                       ),
                     ),
                     Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: Column(
                         children: <Widget>[
                           Padding(
