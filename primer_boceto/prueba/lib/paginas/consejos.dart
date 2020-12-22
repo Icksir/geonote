@@ -5,9 +5,10 @@ class Consejos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         title: Text('Procedimiento y recomendaciones'),
       ),
+      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
       body: ListView(
         children: <Widget>[
           SizedBox(
@@ -16,19 +17,32 @@ class Consejos extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
               child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
+                color: Color.fromRGBO(083, 131, 178, 1),
                 child: FlatButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/procedimiento_previo');
                   },
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.lightbulb_outline),
+                      Icon(Icons.lightbulb_outline, color: Colors.white),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 0.0, horizontal: 10),
                         child: Text(
                           "Antes del sismo",
-                          style: TextStyle(fontSize: 15),
+                          style: TextStyle(fontSize: 15, color: Colors.white),
                         ),
                       ),
                     ],
@@ -43,6 +57,19 @@ class Consejos extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
               child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
+                color: Color.fromRGBO(083, 131, 178, 1),
                 child: FlatButton(
                   onPressed: () {
                     print("si");
@@ -50,13 +77,13 @@ class Consejos extends StatelessWidget {
                   },
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.lightbulb_outline),
+                      Icon(Icons.lightbulb_outline, color: Colors.white),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 0.0, horizontal: 10),
                         child: Text(
                           "Durante el sismo",
-                          style: TextStyle(fontSize: 15),
+                          style: TextStyle(fontSize: 15, color: Colors.white),
                         ),
                       )
                     ],
@@ -71,23 +98,39 @@ class Consejos extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
                 child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        topLeft: Radius.circular(10),
+                      ),
+                      side: BorderSide(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
+                    ),
+                    color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton(
-                  onPressed: () {
-                    print("si");
-                    Navigator.pushNamed(context, '/procedimiento_post');
-                  },
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.lightbulb_outline),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 10),
-                        child: Text("Despues el sismo",
-                            style: TextStyle(fontSize: 15)),
-                      )
-                    ],
-                  ),
-                )),
+                      onPressed: () {
+                        print("si");
+                        Navigator.pushNamed(context, '/procedimiento_post');
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Icon(Icons.lightbulb_outline, color: Colors.white),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 0.0, horizontal: 10),
+                            child: Text(
+                              "Despues el sismo",
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
+                            ),
+                          )
+                        ],
+                      ),
+                    )),
               )),
           SizedBox(
               height: 80,
@@ -95,23 +138,42 @@ class Consejos extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
                 child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        topLeft: Radius.circular(10),
+                      ),
+                      side: BorderSide(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
+                    ),
+                    color: Color.fromRGBO(083, 131, 178, 1),
                     child: FlatButton(
-                  onPressed: () {
-                    print("si");
-                    Navigator.pushNamed(context, '/recomendaciones');
-                  },
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.lightbulb_outline),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 10),
-                        child: Text("Recomendaciones",
-                            style: TextStyle(fontSize: 15)),
-                      )
-                    ],
-                  ),
-                )),
+                      onPressed: () {
+                        print("si");
+                        Navigator.pushNamed(context, '/recomendaciones');
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.lightbulb_outline,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 0.0, horizontal: 10),
+                            child: Text(
+                              "Recomendaciones",
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
+                            ),
+                          )
+                        ],
+                      ),
+                    )),
               ))
         ],
         /* children: const <Widget>[

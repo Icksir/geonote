@@ -25,9 +25,10 @@ class _ConfigState extends State<Config> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         title: Text('Configuración'),
       ),
+      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
       body: ListView(
         children: <Widget>[
           SwitchListTile(

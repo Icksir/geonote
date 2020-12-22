@@ -49,7 +49,9 @@ class _SismosState extends State<Sismos> {
                   children: <Widget>[
                     Expanded(
                       child: Padding(
-                        child: Text("$texto", style: TextStyle(fontSize: 15)),
+                        child: Text("$texto",
+                            style:
+                                TextStyle(fontSize: 15, color: Colors.white)),
                         padding:
                             const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
                       ),
@@ -71,10 +73,11 @@ class _SismosState extends State<Sismos> {
                                         'longitud': data[index]['Longitud']
                                       });
                                 },
-                                icon: Icon(Icons.map),
+                                icon: Icon(Icons.map, color: Colors.white),
                                 label: Text(
                                   "Mapa",
-                                  style: TextStyle(fontSize: 15),
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -83,10 +86,12 @@ class _SismosState extends State<Sismos> {
                             height: 30,
                             child: FlatButton.icon(
                               onPressed: () {},
-                              icon: Icon(Icons.info_outline),
+                              icon:
+                                  Icon(Icons.info_outline, color: Colors.white),
                               label: Text(
                                 "Detalles",
-                                style: TextStyle(fontSize: 15),
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
                               ),
                             ),
                           )

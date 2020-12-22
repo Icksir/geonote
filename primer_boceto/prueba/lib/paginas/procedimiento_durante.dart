@@ -10,54 +10,115 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         title: Text('Durante un sismo'),
       ),
+      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
       body: ListView(
         children: <Widget>[
           SizedBox(
             height: 80,
             child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
                 child: ListTile(
-              title: Text(
-                  "Mantén la calma y preocúpate especialmente de personas mayores o enfermas"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+                  title: Text(
+                      "Mantén la calma y preocúpate especialmente de personas mayores o enfermas"),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
                 child: ListTile(
-              title: Text(
-                  "Sitúate en un lugar alejado de muebles altos y pesados"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+                  title: Text(
+                      "Sitúate en un lugar alejado de muebles altos y pesados"),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
                 child: ListTile(
-              title: Text(
-                  "En lo posible, no escapes al exterior ya que podrían caer tejas, postes y otros"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+                  title: Text(
+                      "En lo posible, no escapes al exterior ya que podrían caer tejas, postes y otros"),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
                 child: ListTile(
-              title: Text(
-                  "Usa sólo las escaleras para evacuar el edificio, nunca los ascensores"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+                  title: Text(
+                      "Usa sólo las escaleras para evacuar el edificio, nunca los ascensores"),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                )),
           ),
           SizedBox(
             height: 80,
             child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
                 child: ListTile(
-              title: Text("En lo posible, no conduzcas"),
-              leading: Icon(Icons.fireplace_outlined),
-            )),
+                  title: Text("En lo posible, no conduzcas"),
+                  leading: Icon(Icons.fireplace_outlined, color: Colors.white),
+                )),
           )
         ],
         /* children: const <Widget>[
