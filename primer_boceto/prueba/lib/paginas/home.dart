@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:prueba/servicios/preferencias.dart';
 
 class Home extends StatefulWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -11,6 +12,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   FlutterLocalNotificationsPlugin fltrNotification;
+  Preferencias _preferencias = Preferencias();
+  /* Preferencias _preferencias = Preferencias(); */
   @override
   void initState() {
     super.initState();
@@ -21,6 +24,16 @@ class _HomeState extends State<Home> {
     fltrNotification = new FlutterLocalNotificationsPlugin();
     fltrNotification.initialize(initializationSettings,
         onSelectNotification: notificationSelected);
+    super.initState();
+    _preferencias.init().then(
+      (value) {
+        setState(
+          () {
+            _preferencias = value;
+          },
+        );
+      },
+    );
   }
 
   Future _showNotification(String titulo, String cuerpo) async {
@@ -30,8 +43,7 @@ class _HomeState extends State<Home> {
     var iOSDetails = new IOSNotificationDetails();
     var generalNotificationDetails =
         new NotificationDetails(android: androidDetails, iOS: iOSDetails);
-    await fltrNotification.show(
-        0, titulo, cuerpo, generalNotificationDetails);
+    await fltrNotification.show(0, titulo, cuerpo, generalNotificationDetails);
   }
 
   List data = [];
@@ -209,7 +221,8 @@ class _HomeState extends State<Home> {
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                _showNotification("Advertencia de sismo","Ha ocurrido un sismo de magnitud M en C");
+                                _showNotification("Advertencia de sismo",
+                                    _preferencias.ciudades.toString());
                               },
                               label: Text(
                                 'Prueba',

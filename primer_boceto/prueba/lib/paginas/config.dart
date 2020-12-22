@@ -15,10 +15,10 @@ class _ConfigState extends State<Config> {
 
   List<dynamic> value1 = [];
   List<S2Choice<String>> ciudades1 = [
-    S2Choice<String>(value: "1", title: 'Santiago'),
-    S2Choice<String>(value: "2", title: 'Viña del mar'),
-    S2Choice<String>(value: "3", title: 'Valparaíso'),
-    S2Choice<String>(value: "4", title: 'Talca'),
+    S2Choice<String>(value: "Santiago", title: 'Santiago'),
+    S2Choice<String>(value: "Viña del mar", title: 'Viña del mar'),
+    S2Choice<String>(value: "Valparaíso", title: 'Valparaíso'),
+    S2Choice<String>(value: "Talca", title: 'Talca'),
   ];
 
   @override
@@ -84,23 +84,6 @@ class _ConfigState extends State<Config> {
               ),
             ),
           ),
-
-          /* SmartSelect<String>.multiple(
-              title: 'Frameworks',
-              value: value,
-              choiceItems: options,
-              onChange: (state) => setState(() => value = state.value)) */
-          /* ,
-            DropdownButton(
-                items: _lista.map((String bbb) {
-                  return DropdownMenuItem(value: bbb, child: Text(bbb));
-                }).toList(),
-                onChanged: (_value) => {
-                      setState(() {
-                        _menu = _value;
-                      })
-                    },
-                hint: Text(_menu)) */
         ],
       ),
     );
