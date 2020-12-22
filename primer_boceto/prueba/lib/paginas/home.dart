@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-
 class Home extends StatefulWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -17,16 +16,22 @@ class _HomeState extends State<Home> {
     super.initState();
     var androidInitialize = new AndroidInitializationSettings('ic_launcher');
     var iOSinitialize = new IOSInitializationSettings();
-    var initializationSettings = new InitializationSettings(android: androidInitialize, iOS: iOSinitialize);
+    var initializationSettings = new InitializationSettings(
+        android: androidInitialize, iOS: iOSinitialize);
     fltrNotification = new FlutterLocalNotificationsPlugin();
-    fltrNotification.initialize(initializationSettings, onSelectNotification: notificationSelected);
+    fltrNotification.initialize(initializationSettings,
+        onSelectNotification: notificationSelected);
   }
 
   Future _showNotification() async {
-    var androidDetails = new AndroidNotificationDetails("Channel ID", "Camilo", "Descrpición", importance: Importance.max);
+    var androidDetails = new AndroidNotificationDetails(
+        "Channel ID", "Camilo", "Descrpición",
+        importance: Importance.max);
     var iOSDetails = new IOSNotificationDetails();
-    var generalNotificationDetails = new NotificationDetails(android: androidDetails, iOS: iOSDetails);
-    await fltrNotification.show(0, "olapeo", "cata", generalNotificationDetails);
+    var generalNotificationDetails =
+        new NotificationDetails(android: androidDetails, iOS: iOSDetails);
+    await fltrNotification.show(
+        0, "olapeo", "cata", generalNotificationDetails);
   }
 
   List data = [];
@@ -53,44 +58,75 @@ class _HomeState extends State<Home> {
       key: widget._scaffoldKey,
       drawer: new Drawer(
         child: ListView(
+          padding: EdgeInsets.zero,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              child: FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/consejos');
-                  },
-                  icon: Icon(Icons.lightbulb_outline),
-                  label: Text(
-                    "Procedimientos y \nRecomendaciones",
-                    style: TextStyle(fontSize: 16),
-                  )),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-              child: FlatButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, "/config");
-                },
-                icon: Icon(Icons.settings_outlined),
-                label: Text(
-                  "Configuraciones",
-                  style: TextStyle(fontSize: 16),
+            Container(
+              height: 140,
+              child: DrawerHeader(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Menú',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 50,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(083, 131, 178, 1),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-              child: FlatButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, "/zonas_seguras");
-                },
-                icon: Icon(Icons.do_disturb_on_outlined),
-                label: Text(
-                  "Zonas de Inundación",
-                  style: TextStyle(fontSize: 16),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: FlatButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/consejos');
+                    },
+                    icon: Icon(Icons.lightbulb_outline),
+                    label: Text(
+                      "Procedimientos y \nRecomendaciones",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                  child: FlatButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/config");
+                    },
+                    icon: Icon(Icons.settings_outlined),
+                    label: Text(
+                      "Configuraciones",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                  child: FlatButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/zonas_seguras");
+                    },
+                    icon: Icon(Icons.do_disturb_on_outlined),
+                    label: Text(
+                      "Zonas de Inundación",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -172,7 +208,9 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FlatButton.icon(
-                              onPressed: () {_showNotification();},
+                              onPressed: () {
+                                _showNotification();
+                              },
                               label: Text(
                                 'Detalles',
                                 style: TextStyle(
@@ -185,7 +223,6 @@ class _HomeState extends State<Home> {
                                 color: Colors.white,
                               ),
                             ),
-                            Container(),
                             FlatButton.icon(
                               onPressed: () {
                                 Navigator.pushNamed(
@@ -200,7 +237,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.white,
                               ),
                               label: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(0),
                                 child: Text(
                                   'Mapa',
                                   style: TextStyle(
@@ -268,10 +305,14 @@ class _HomeState extends State<Home> {
                       },
                       icon: Icon(
                         Icons.announcement_rounded,
+                        color: Colors.white,
                       ),
                       label: Padding(
                         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-                        child: Text('Últimos Sismos'),
+                        child: Text(
+                          'Últimos Sismos',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
@@ -283,7 +324,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  Future notificationSelected(String payload) async {
 
-  }
+  Future notificationSelected(String payload) async {}
 }

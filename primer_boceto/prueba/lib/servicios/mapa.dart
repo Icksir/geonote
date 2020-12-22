@@ -102,6 +102,7 @@ class _MapaState extends State<Mapa> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ubicación'),
+        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
         centerTitle: true,
       ),
       body: Stack(
