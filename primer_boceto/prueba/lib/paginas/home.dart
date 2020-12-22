@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
 
 class Home extends StatefulWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  FlutterLocalNotificationsPlugin fltrNotification;
+  @override
+  void initState() {
+    super.initState();
+    var androidInitialize = new AndroidInitializationSettings('ic_launcher');
+    var iOSinitialize = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(android: androidInitialize, iOS: iOSinitialize);
+    fltrNotification = new FlutterLocalNotificationsPlugin();
+    fltrNotification.initialize(initializationSettings, onSelectNotification: notificationSelected);
+  }
+
+  Future _showNotification() async {
+    var androidDetails = new AndroidNotificationDetails("Channel ID", "Camilo", "Descrpición", importance: Importance.max);
+    var iOSDetails = new IOSNotificationDetails();
+    var generalNotificationDetails = new NotificationDetails(android: androidDetails, iOS: iOSDetails);
+    await fltrNotification.show(0, "olapeo", "cata", generalNotificationDetails);
+  }
+
   List data = [];
   String fecha = "No se pudo obtener la fecha";
   String ref = "No se pudo obtener la ubicación";
@@ -151,7 +172,7 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FlatButton.icon(
-                              onPressed: () {},
+                              onPressed: () {_showNotification();},
                               label: Text(
                                 'Detalles',
                                 style: TextStyle(
@@ -261,5 +282,8 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+  Future notificationSelected(String payload) async {
+
   }
 }
