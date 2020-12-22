@@ -42,8 +42,11 @@ class _HomeState extends State<Home> {
         importance: Importance.max);
     var iOSDetails = new IOSNotificationDetails();
     var generalNotificationDetails =
-        new NotificationDetails(android: androidDetails, iOS: iOSDetails);
-    await fltrNotification.show(0, titulo, cuerpo, generalNotificationDetails);
+    new NotificationDetails(android: androidDetails, iOS: iOSDetails);
+    if (true) {
+      await fltrNotification.show(
+          0, titulo, cuerpo, generalNotificationDetails);
+    }
   }
 
   List data = [];
