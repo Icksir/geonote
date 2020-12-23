@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Recomendaciones extends StatefulWidget {
   @override
@@ -8,12 +9,16 @@ class Recomendaciones extends StatefulWidget {
 class _Recomendaciones extends State<Recomendaciones> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/images/fondo.jpg"), fit: BoxFit.fill)),
+    child: Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-        title: Text('Recomendaciones'),
+        title: Text('Recomendaciones', style: TextStyle(fontFamily: 'Paper',fontSize: 30),),
       ),
-      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
+    backgroundColor: Colors.transparent,
       body: ListView(
         children: <Widget>[
           SizedBox(
@@ -33,8 +38,8 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 1", style: TextStyle()),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("Consejo 1", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -54,8 +59,8 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 2", style: TextStyle()),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("Consejo 2", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -75,8 +80,8 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 3", style: TextStyle()),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("Consejo 3", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -96,8 +101,8 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 4", style: TextStyle()),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("Consejo 4", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           )
         ],
@@ -111,6 +116,6 @@ class _Recomendaciones extends State<Recomendaciones> {
         ),)
       ] */
       ),
-    );
+    ));
   }
 }

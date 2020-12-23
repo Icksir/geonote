@@ -75,6 +75,12 @@ flutter:
     - family: Boxes
       fonts:
       - asset: assets/fonts/Boxes Dream.ttf
+    - family: Paper
+      fonts:
+      - asset: assets/fonts/Paper Flowers.ttf
+    - family: Daisy
+      fonts:
+      - asset: assets/fonts/paperdaisy-demo.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -8,12 +8,16 @@ class ProcedimientoPost extends StatefulWidget {
 class _ProcedimientoPost extends State<ProcedimientoPost> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/images/fondo.jpg"), fit: BoxFit.fill)),
+    child: Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-        title: Text('Despues de un sismo'),
+        title: Text('Después de un sismo', style: TextStyle(fontFamily: 'Paper',fontSize: 30)),
       ),
-      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
+    backgroundColor: Colors.transparent,
       body: ListView(
         children: <Widget>[
           SizedBox(
@@ -34,8 +38,8 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Reúne a tu equipo de trabajo y permanezcan en un lugar seguro"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Reúne a tu equipo de trabajo y permanezcan en un lugar seguro", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -56,8 +60,8 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Verifica posibles daños a tus compañeros y al edificio en que trabajas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Verifica posibles daños a tus compañeros y al edificio en que trabajas", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -78,8 +82,8 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Coloca en el suelo los artefactos peligrosos para evitar que se caigan con posibles réplicas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Coloca en el suelo los artefactos peligrosos para evitar que se caigan con posibles réplicas", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -99,8 +103,8 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Enciende una radio para estar informado"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("Enciende una radio para estar informado", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -120,8 +124,8 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("No desesperes si no puedes realizar llamadas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("No desesperes si no puedes realizar llamadas", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
         ],
@@ -135,6 +139,6 @@ class _ProcedimientoPost extends State<ProcedimientoPost> {
         ),)
       ] */
       ),
-    );
+    ));
   }
 }

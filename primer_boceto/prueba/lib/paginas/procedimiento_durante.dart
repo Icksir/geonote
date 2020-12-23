@@ -8,12 +8,16 @@ class ProcedimientoDurante extends StatefulWidget {
 class _ProcedimientoDurante extends State<ProcedimientoDurante> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/images/fondo.jpg"), fit: BoxFit.fill)),
+    child: Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-        title: Text('Durante un sismo'),
+        title: Text('Durante un sismo', style: TextStyle(fontFamily: 'Paper',fontSize: 30)),
       ),
-      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
+    backgroundColor: Colors.transparent,
       body: ListView(
         children: <Widget>[
           SizedBox(
@@ -34,8 +38,8 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Mantén la calma y preocúpate especialmente de personas mayores o enfermas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Mantén la calma y preocúpate especialmente de personas mayores o enfermas", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -56,8 +60,8 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Sitúate en un lugar alejado de muebles altos y pesados"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Sitúate en un lugar alejado de muebles altos y pesados", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -78,8 +82,8 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "En lo posible, no escapes al exterior ya que podrían caer tejas, postes y otros"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "En lo posible, no escapes al exterior ya que podrían caer tejas, postes y otros", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -100,8 +104,8 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                 ),
                 child: ListTile(
                   title: Text(
-                      "Usa sólo las escaleras para evacuar el edificio, nunca los ascensores"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                      "Usa sólo las escaleras para evacuar el edificio, nunca los ascensores", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           ),
           SizedBox(
@@ -121,8 +125,8 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("En lo posible, no conduzcas"),
-                  leading: Icon(Icons.fireplace_outlined, color: Colors.black),
+                  title: Text("En lo posible, no conduzcas", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  leading: Icon(Icons.admin_panel_settings_outlined, color: Colors.black),
                 )),
           )
         ],
@@ -136,6 +140,6 @@ class _ProcedimientoDurante extends State<ProcedimientoDurante> {
         ),)
       ] */
       ),
-    );
+    ));
   }
 }

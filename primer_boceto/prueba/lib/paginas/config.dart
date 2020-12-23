@@ -27,66 +27,70 @@ class _ConfigState extends State<Config> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-        title: Text('Configuración'),
+        title: Text('Configuración', style: TextStyle(fontFamily: 'Paper',fontSize: 30)),
       ),
       backgroundColor: Color.fromRGBO(083, 131, 178, 1),
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/fondo.jpg"), fit: BoxFit.fill)),
+        child: ListView(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.0),
+                  ),
+                ),
+                child: SwitchListTile(
+                  value: _preferencias.automatico,
+                  title: Text("¿Quieres recibir notificaciones de los sismos?", style: TextStyle(fontFamily: 'Daisy',fontSize: 16),),
+                  secondary: Icon(Icons.notification_important_outlined),
+                  controlAffinity: ListTileControlAffinity.platform,
+                  /* value: /* _checkBoxValue ,*/ */
+                  onChanged: (value) {
+                    setState(
+                      () {
+                        _preferencias.automatico = value;
+                        _preferencias.commit();
+                      },
+                    );
+                  },
                 ),
               ),
-              child: SwitchListTile(
-                value: _preferencias.automatico,
-                title: Text("¿Quieres recibir notificaciones de los sismos?",
-                    style: TextStyle(fontSize: 17)),
-                secondary: Icon(Icons.notification_important_outlined),
-                controlAffinity: ListTileControlAffinity.platform,
-                /* value: /* _checkBoxValue ,*/ */
-                onChanged: (value) {
-                  setState(
-                    () {
-                      _preferencias.automatico = value;
-                      _preferencias.commit();
-                    },
-                  );
-                },
-              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.0),
+                  ),
+                ),
+                child: SmartSelect<String>.multiple(
+                  title: 'Ciudades a elección',
+                  placeholder: 'Ciudades',
+                  value: _preferencias.ciudades,
+                  choiceItems: ciudades1,
+                  onChange: (state) {
+                    setState(
+                      () {
+                        value1 = state.value;
+                        _preferencias.ciudades = value1;
+                        _preferencias.commit();
+                        print(_preferencias.ciudades);
+                      },
+                    );
+                  },
                 ),
               ),
-              child: SmartSelect<String>.multiple(
-                title: 'Ciudades a elección',
-                placeholder: 'Ciudades',
-                value: _preferencias.ciudades,
-                choiceItems: ciudades1,
-                onChange: (state) {
-                  setState(
-                    () {
-                      value1 = state.value;
-                      _preferencias.ciudades = value1;
-                      _preferencias.commit();
-                      print(_preferencias.ciudades);
-                    },
-                  );
-                },
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

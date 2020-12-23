@@ -1,6 +1,5 @@
 import 'dart:ffi';
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -224,10 +223,10 @@ class _HomeState extends State<Home> {
                         Expanded(
                           flex: 2,
                           child: Text(
-                            "Último Sismo",
+                            "ÚLTIMO SISMO",
                             style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Paper',
+                              fontSize: 30,
                               color: Colors.white,
                             ),
                           ),
@@ -236,6 +235,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(fecha,
                               style: TextStyle(
+                                fontFamily: 'Daisy',
                                 fontSize: 16,
                                 color: Colors.white,
                               )),
@@ -244,6 +244,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(ref,
                               style: TextStyle(
+                                fontFamily: 'Daisy',
                                 fontSize: 16,
                                 color: Colors.white,
                               )),
@@ -252,6 +253,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(magnitud,
                               style: TextStyle(
+                                fontFamily: 'Daisy',
                                 fontSize: 16,
                                 color: Colors.white,
                               )),
@@ -272,6 +274,8 @@ class _HomeState extends State<Home> {
                                 label: Text(
                                   'Notificación',
                                   style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: 'Daisy',
                                     color: Colors.white,
                                   ),
                                 ),
@@ -299,6 +303,8 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                     'Mapa',
                                     style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: 'Daisy',
                                       color: Colors.white,
                                     ),
                                   ),
@@ -366,10 +372,10 @@ class _HomeState extends State<Home> {
                           color: Colors.white,
                         ),
                         label: Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                          padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
                           child: Text(
                             'Últimos Sismos',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Paper'),
                           ),
                         ),
                       ),
