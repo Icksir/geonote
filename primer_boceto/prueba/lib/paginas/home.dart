@@ -72,6 +72,7 @@ class _HomeState extends State<Home> {
       }
     }
 
+    // ignore: missing_return
     String encontrarSismosConf() {
       for (int i = 0; i<data.length; i++) {
         List valpo = [-33.05 , -71.6167];
@@ -80,20 +81,23 @@ class _HomeState extends State<Home> {
         List stgo = [-33.4372 , -70.6506];
         List mina = [-20.98138913351316, -68.63792448764886];
 
-        Double latS = double.parse(data[i]["Latitud"]) as Double;
-        Double longS= double.parse(data[i]["Longitud"]) as Double;
+        var latS = double.parse(data[i]["Latitud"]);
+        var longS= double.parse(data[i]["Longitud"]);
         Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Mina Collahuasi":mina};
         for (int j = 0; j < _preferencias.ciudades.length ; j++) {
           var latitud = lugares[_preferencias.ciudades[j]][0];
           var longitud = lugares[_preferencias.ciudades[j]][1];
-          var dist = sqrt((latitud-latS)*(latitud-latS)-(longitud-longS)*(longitud-longS));
-          if ( 1.5 >= dist ) {
-            _showNotification("Aviso de Sismo", data[i]["Fecha"]);
+          var dist = sqrt((latitud-latS)*(latitud-latS)+(longitud-longS)*(longitud-longS));
+          print(dist);
+
+          if ( 0.4724622 >= dist ) {
+            _showNotification("Aviso de Sismo", "Ocurrió un sismo de magnitud ${data[i]["Magnitud"]} cerca de ${_preferencias.ciudades[j]}");
             return "s";
           }
 
         }
       }
+      return "s";
     }
 
 
