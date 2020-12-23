@@ -226,7 +226,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             "Último Sismo",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
@@ -236,6 +236,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(fecha,
                               style: TextStyle(
+                                fontSize: 16,
                                 color: Colors.white,
                               )),
                         ),
@@ -243,6 +244,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(ref,
                               style: TextStyle(
+                                fontSize: 16,
                                 color: Colors.white,
                               )),
                         ),
@@ -250,6 +252,7 @@ class _HomeState extends State<Home> {
                           flex: 1,
                           child: Text(magnitud,
                               style: TextStyle(
+                                fontSize: 16,
                                 color: Colors.white,
                               )),
                         ),
@@ -317,7 +320,7 @@ class _HomeState extends State<Home> {
                   Expanded(
                     flex: 1,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(25, 0, 40.0, 50.0),
+                      padding: const EdgeInsets.fromLTRB(25, 0, 20.0, 50.0),
                       child: FloatingActionButton(
                         onPressed: () =>
                             widget._scaffoldKey.currentState.openDrawer(),
@@ -366,7 +369,7 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
                           child: Text(
                             'Últimos Sismos',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                       ),
