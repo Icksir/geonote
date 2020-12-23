@@ -45,57 +45,62 @@ class _ZonasSegurasState extends State<ZonasSeguras> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(008, 024, 066, 1),
-        title: Text('Zonas de Inundación'),
-      ),
-      backgroundColor: Color.fromRGBO(033, 069, 128, 1),
-      body: ListView.builder(
-        itemCount: url.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              _launchInBrowser(url[index][1]);
-            },
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
-              child: SizedBox(
-                height: 80,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                    ),
-                    side: BorderSide(
-                      color: Colors.white,
-                      width: 2.0,
-                    ),
-                  ),
-                  color: Color.fromRGBO(083, 131, 178, 1),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          child: Text(
-                            "Zona de Inundación de ${url[index][0]}",
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                          padding:
-                              const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-                        ),
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/fondo.jpg"), fit: BoxFit.fill)),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(008, 024, 066, 1),
+          title: Text('Zonas de Inundación', style: TextStyle(fontFamily: 'Paper',fontSize: 30)),
+        ),
+        backgroundColor: Colors.transparent,
+        body: ListView.builder(
+          itemCount: url.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                _launchInBrowser(url[index][1]);
+              },
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 5.0),
+                child: SizedBox(
+                  height: 80,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        topLeft: Radius.circular(10),
                       ),
-                    ],
+                      side: BorderSide(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
+                    ),
+                    color: Color.fromRGBO(083, 131, 178, 1),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Padding(
+                            child: Text(
+                              "Zona de Inundación de ${url[index][0]}",
+                              style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'Daisy'),
+                            ),
+                            padding:
+                                const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

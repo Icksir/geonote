@@ -22,7 +22,7 @@ class _Recomendaciones extends State<Recomendaciones> {
       body: ListView(
         children: <Widget>[
           SizedBox(
-            height: 80,
+            height: 100,
             child: Card(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -38,12 +38,12 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 1", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  title: Text("Actuar con calma tiene un efecto tranquilizador sobre las personas afectadas. La calma es casi tan contagiosa como el nerviosismo.", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
                   leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
-            height: 80,
+            height: 100,
             child: Card(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -59,12 +59,12 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 2", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  title: Text("Estimula y favorece que las personas afectadas se incorporen a las tareas de ayuda mutua entre sí, tan pronto como sea posible.", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
                   leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
-            height: 80,
+            height: 100,
             child: Card(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -80,12 +80,12 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 3", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  title: Text("La persona que está en estado de choque o conmoción debe ser alejada del ambiente traumático. Hay que hacerle sentir que está acompañada.", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
                   leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           ),
           SizedBox(
-            height: 80,
+            height: 100,
             child: Card(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -101,7 +101,7 @@ class _Recomendaciones extends State<Recomendaciones> {
                   ),
                 ),
                 child: ListTile(
-                  title: Text("Consejo 4", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
+                  title: Text("Evita los relatos con detalles horripilantes, pero tampoco tratar de minimizar lo sucedido como “si aquí no hubiera pasado nada”.", style: TextStyle(fontFamily: 'Daisy',fontSize: 17),),
                   leading: Icon(Icons.lightbulb_outline_rounded, color: Colors.black),
                 )),
           )
