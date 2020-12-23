@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
         importance: Importance.max);
     var iOSDetails = new IOSNotificationDetails();
     var generalNotificationDetails =
-    new NotificationDetails(android: androidDetails, iOS: iOSDetails);
+        new NotificationDetails(android: androidDetails, iOS: iOSDetails);
     if (_preferencias.automatico) {
       await fltrNotification.show(
           0, titulo, cuerpo, generalNotificationDetails);
@@ -73,33 +73,38 @@ class _HomeState extends State<Home> {
 
     // ignore: missing_return
     String encontrarSismosConf() {
-      for (int i = 0; i<data.length; i++) {
-        List valpo = [-33.05 , -71.6167];
-        List vina = [-33 , -71.5167];
-        List talca = [-35.4333 , -71.6667];
-        List stgo = [-33.4372 , -70.6506];
+      for (int i = 0; i < data.length; i++) {
+        List valpo = [-33.05, -71.6167];
+        List vina = [-33, -71.5167];
+        List talca = [-35.4333, -71.6667];
+        List stgo = [-33.4372, -70.6506];
         List mina = [-27.3664, -70.3331];
 
         var latS = double.parse(data[i]["Latitud"]);
-        var longS= double.parse(data[i]["Longitud"]);
-        Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Copiapó":mina};
-        for (int j = 0; j < _preferencias.ciudades.length ; j++) {
+        var longS = double.parse(data[i]["Longitud"]);
+        Map lugares = {
+          "Viña del mar": vina,
+          "Valparaiso": valpo,
+          "Talca": talca,
+          "Santiago": stgo,
+          "Copiapó": mina
+        };
+        for (int j = 0; j < _preferencias.ciudades.length; j++) {
           var latitud = lugares[_preferencias.ciudades[j]][0];
           var longitud = lugares[_preferencias.ciudades[j]][1];
-          var dist = sqrt((latitud-latS)*(latitud-latS)+(longitud-longS)*(longitud-longS));
+          var dist = sqrt((latitud - latS) * (latitud - latS) +
+              (longitud - longS) * (longitud - longS));
           print(dist);
 
-          if ( 0.4724622 >= dist ) {
-            _showNotification("Aviso de Sismo", "Sismo de magnitud ${data[i]["Magnitud"]} en ${_preferencias.ciudades[j]}");
+          if (0.4724622 >= dist) {
+            _showNotification("Aviso de Sismo",
+                "Sismo de magnitud ${data[i]["Magnitud"]} en ${_preferencias.ciudades[j]}");
             return "s";
           }
-
         }
       }
       return "s";
     }
-
-
 
     return Container(
       decoration: BoxDecoration(
@@ -139,8 +144,8 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     child: FlatButton.icon(
                       onPressed: () {
                         Navigator.pushNamed(context, '/consejos');
@@ -290,7 +295,10 @@ class _HomeState extends State<Home> {
                                   Navigator.pushNamed(
                                     context,
                                     '/mapa',
-                                    arguments: {'latitud': lat, 'longitud': long},
+                                    arguments: {
+                                      'latitud': lat,
+                                      'longitud': long
+                                    },
                                   );
                                 },
                                 color: Color.fromRGBO(033, 069, 128, 0.8),
@@ -375,7 +383,10 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
                           child: Text(
                             'Últimos Sismos',
-                            style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Paper'),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontFamily: 'Paper'),
                           ),
                         ),
                       ),
