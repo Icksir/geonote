@@ -78,11 +78,11 @@ class _HomeState extends State<Home> {
         List vina = [-33 , -71.5167];
         List talca = [-35.4333 , -71.6667];
         List stgo = [-33.4372 , -70.6506];
-        List mina = [-20.98138913351316, -68.63792448764886];
+        List mina = [-27.3664, -70.3331];
 
         var latS = double.parse(data[i]["Latitud"]);
         var longS= double.parse(data[i]["Longitud"]);
-        Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Mina Collahuasi":mina};
+        Map lugares = {"Vina del mar": vina,"Valparaiso":valpo,"Talca":talca,"Santiago":stgo, "Copiapó":mina};
         for (int j = 0; j < _preferencias.ciudades.length ; j++) {
           var latitud = lugares[_preferencias.ciudades[j]][0];
           var longitud = lugares[_preferencias.ciudades[j]][1];
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
           print(dist);
 
           if ( 0.4724622 >= dist ) {
-            _showNotification("Aviso de Sismo", "Ocurrió un sismo de magnitud ${data[i]["Magnitud"]} cerca de ${_preferencias.ciudades[j]}");
+            _showNotification("Aviso de Sismo", "Sismo de magnitud ${data[i]["Magnitud"]} en ${_preferencias.ciudades[j]}");
             return "s";
           }
 
