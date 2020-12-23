@@ -55,7 +55,6 @@ class _SismosState extends State<Sismos> {
                         child: Padding(
                           child: Text(
                             "$texto",
-                            textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                           padding:
@@ -90,19 +89,6 @@ class _SismosState extends State<Sismos> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 30,
-                              child: FlatButton.icon(
-                                onPressed: () {},
-                                icon: Icon(Icons.info_outline,
-                                    color: Colors.white),
-                                label: Text(
-                                  "Detalles",
-                                  style: TextStyle(
-                                      fontSize: 14, color: Colors.white),
-                                ),
-                              ),
-                            )
                           ],
                         ),
                       ),
