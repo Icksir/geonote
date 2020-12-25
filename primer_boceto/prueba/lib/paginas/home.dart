@@ -206,7 +206,7 @@ class _HomeState extends State<Home> {
               Expanded(
                 flex: 4,
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 50.0),
+                  margin: EdgeInsets.fromLTRB(30.0, 0, 30.0, 30.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
                     color: Color.fromRGBO(083, 131, 178, 1),
@@ -238,30 +238,36 @@ class _HomeState extends State<Home> {
                         ),
                         Expanded(
                           flex: 1,
-                          child: Text(fecha,
-                              style: TextStyle(
-                                fontFamily: 'Daisy',
-                                fontSize: 16,
-                                color: Colors.white,
-                              )),
+                          child: Text(
+                            fecha,
+                            style: TextStyle(
+                              fontFamily: 'Daisy',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Text(ref,
-                              style: TextStyle(
-                                fontFamily: 'Daisy',
-                                fontSize: 16,
-                                color: Colors.white,
-                              )),
+                          child: Text(
+                            ref,
+                            style: TextStyle(
+                              fontFamily: 'Daisy',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Text(magnitud,
-                              style: TextStyle(
-                                fontFamily: 'Daisy',
-                                fontSize: 16,
-                                color: Colors.white,
-                              )),
+                          child: Text(
+                            magnitud,
+                            style: TextStyle(
+                              fontFamily: 'Daisy',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         Expanded(
                           flex: 3,
