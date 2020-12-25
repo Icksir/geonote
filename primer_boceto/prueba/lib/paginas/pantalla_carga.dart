@@ -12,14 +12,18 @@ class _CargaState extends State<Carga> {
   void recabarDatos() async {
     GaelApi instancia = GaelApi();
     await instancia.getDatos();
-    Navigator.pushReplacementNamed(context, '/home', arguments: [
-      instancia.sismo1,
-      instancia.sismo2,
-      instancia.sismo3,
-      instancia.sismo4,
-      instancia.sismo5,
-      instancia.sismo6,
-    ]);
+    Navigator.pushReplacementNamed(
+      context,
+      '/home',
+      arguments: [
+        instancia.sismo1,
+        instancia.sismo2,
+        instancia.sismo3,
+        instancia.sismo4,
+        instancia.sismo5,
+        instancia.sismo6,
+      ],
+    );
   }
 
   @override
