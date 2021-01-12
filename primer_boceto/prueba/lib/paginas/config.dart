@@ -19,7 +19,7 @@ class _ConfigState extends State<Config> {
     S2Choice<String>(value: "Viña del mar", title: 'Viña del mar'),
     S2Choice<String>(value: "Valparaíso", title: 'Valparaíso'),
     S2Choice<String>(value: "Talca", title: 'Talca'),
-    S2Choice<String>(value: "Copiapó", title: 'Copiapó'),
+    S2Choice<String>(value: "Los Vilos", title: 'Los Vilos'),
   ];
 
   @override
