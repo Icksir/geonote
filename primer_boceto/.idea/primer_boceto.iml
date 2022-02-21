@@ -5,8 +5,11 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/prueba/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/prueba/build" />
+      <excludeFolder url="file://$MODULE_DIR$/prueba/.dart_tool" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

@@ -13,7 +13,7 @@ class GaelApi {
     try {
       // obtiene datos
       Response response =
-          await get("https://api.gael.cl/general/public/sismos");
+          await get("https://api.gael.cloud/general/public/sismos");
       List<dynamic> data = jsonDecode(response.body);
 
       // data se entrega tal como
